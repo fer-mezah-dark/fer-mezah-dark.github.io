@@ -39,8 +39,16 @@ html[lang="es"] body [lang="en"] { display: none !important; }
   padding: 1.25rem 5vw;
   background: linear-gradient(to bottom, rgba(13,13,15,0.95), rgba(13,13,15,0));
 }
-.nav__logo { font-weight: 700; font-size: 1.4rem; letter-spacing: 0.1em; margin-right: auto; }
-.nav__logo span { color: var(--gold); }
+.nav { transition: background 0.4s, border-color 0.4s; border-bottom: 1px solid transparent; }
+.nav.is-scrolled {                 /* fondo sólido al bajar, para que el texto no se encime */
+  background: rgba(13, 13, 15, 0.92);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom-color: var(--line);
+}
+.nav__logo { margin-right: auto; display: flex; align-items: center; }
+.nav__logo svg { height: 34px; width: auto; fill: var(--gold); transition: transform 0.4s; }
+.nav__logo:hover svg { transform: rotate(-8deg) scale(1.08); }
 .nav__links { display: flex; gap: 2rem; }
 .nav__links a {
   font-size: 0.8rem;
@@ -79,6 +87,17 @@ html[lang="es"] .lang-toggle [data-l="es"] { color: var(--gold); font-weight: 60
   text-align: center;
   padding: 0 5vw;
   position: relative;
+}
+.hero__logo {
+  width: clamp(90px, 11vw, 140px);
+  height: auto;
+  fill: var(--gold);
+  stroke: var(--gold);
+  stroke-width: 14;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  margin-bottom: 2.5rem;
+  filter: drop-shadow(0 0 24px rgba(212, 166, 74, 0.25));
 }
 .hero__kicker {
   color: var(--gold);
