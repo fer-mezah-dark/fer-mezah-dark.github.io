@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fernando Meza | Interactive Designer</title>
-  <meta name="description" content="Portfolio of Fernando Meza, interactive animation designer: 3D, animation, game design and UI/UX.">
+  <title>Fernando Meza | Interactive Animation Designer</title>
+  <meta name="description" content="Portfolio of Fernando Meza, interactive animation designer: 3D, animation, game design, UI/UX and graphic design.">
+
+  <!-- Idioma: se aplica antes de pintar la página para que no parpadee -->
+  <script>
+    (function () {
+      var lang = null;
+      try { lang = localStorage.getItem('lang'); } catch (e) {}
+      if (lang !== 'es' && lang !== 'en') {
+        lang = (navigator.language || 'en').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+      }
+      document.documentElement.lang = lang;
+    })();
+  </script>
 
   <!-- Tipografía -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,48 +32,257 @@
   <header class="nav">
     <a href="#hero" class="nav__logo">F<span>M</span></a>
     <nav class="nav__links">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#work">Work</a>
-      <a href="#contact">Contact</a>
+      <a href="#about"><span lang="en">About</span><span lang="es">Sobre mí</span></a>
+      <a href="#experience"><span lang="en">Experience</span><span lang="es">Experiencia</span></a>
+      <a href="#work"><span lang="en">Work</span><span lang="es">Proyectos</span></a>
+      <a href="#contact"><span lang="en">Contact</span><span lang="es">Contacto</span></a>
     </nav>
+    <button class="lang-toggle" type="button" aria-label="Change language / Cambiar idioma">
+      <span data-l="en">EN</span><span class="lang-toggle__sep">|</span><span data-l="es">ES</span>
+    </button>
   </header>
 
   <main>
 
     <!-- ===== HERO ===== -->
     <section id="hero" class="hero">
-      <p class="hero__kicker">Interactive Animation Designer</p>
+      <p class="hero__kicker">
+        <span lang="en">Interactive Animation Designer</span>
+        <span lang="es">Diseñador en Animación Interactiva</span>
+      </p>
       <h1 class="hero__title">FERNANDO <span>MEZA</span></h1>
-      <p class="hero__sub">3D · Animation · Game Design · UI/UX</p>
+      <p class="hero__sub">
+        <span lang="en">3D · Animation · Game Design · UI/UX · Graphic Design</span>
+        <span lang="es">3D · Animación · Videojuegos · UI/UX · Diseño Gráfico</span>
+      </p>
       <a href="#about" class="hero__scroll">Scroll</a>
     </section>
 
     <!-- ===== ABOUT ===== -->
     <section id="about" class="section">
-      <h2 class="section__title reveal">About me</h2>
-      <p class="section__text reveal">Coming soon.</p>
+      <h2 class="section__title reveal">
+        <span lang="en">About me</span><span lang="es">Sobre mí</span>
+      </h2>
+
+      <div class="about">
+        <!-- Foto: la cambiamos por la real en el paso de imágenes -->
+        <div class="about__photo reveal">
+          <span class="placeholder">
+            <span lang="en">Photo</span><span lang="es">Foto</span>
+          </span>
+        </div>
+
+        <div class="about__text">
+          <p class="about__lead reveal">
+            <span lang="en">I design visual experiences that are functional, intuitive and emotional, built to connect with people.</span>
+            <span lang="es">Diseño experiencias visuales funcionales, intuitivas y emocionales, pensadas para conectar con las personas.</span>
+          </p>
+          <p class="section__text reveal">
+            <span lang="en">I'm an interactive animation designer based in Mexico City, with a Bachelor's degree in Video Game Design from SAE Institute México. For more than 5 years I've worked across 3D modeling, animation, game design, UI/UX, video editing and graphic design, from metaverse worlds and indie games to print catalogs, websites and social media campaigns for real clients.</span>
+            <span lang="es">Soy diseñador en animación interactiva en la Ciudad de México, licenciado en Diseño de Videojuegos por SAE Institute México. Desde hace más de 5 años trabajo en modelado 3D, animación, diseño de videojuegos, UI/UX, edición de video y diseño gráfico: desde mundos de metaverso y videojuegos independientes hasta catálogos impresos, sitios web y campañas en redes para clientes reales.</span>
+          </p>
+
+          <ul class="stats reveal">
+            <li><strong>5+</strong><span lang="en">years of experience</span><span lang="es">años de experiencia</span></li>
+            <li><strong>40+</strong><span lang="en">projects</span><span lang="es">proyectos</span></li>
+            <li><strong>9</strong><span lang="en">companies &amp; clients</span><span lang="es">empresas y clientes</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__block reveal">
+          <h3 class="block__title"><span lang="en">Education</span><span lang="es">Formación</span></h3>
+          <ul class="list">
+            <li>
+              <strong><span lang="en">Bachelor's Degree in Video Game Design</span><span lang="es">Licenciatura en Diseño de Videojuegos</span></strong>
+              <span class="list__meta"><span lang="en">SAE Institute México · 2019–2021 · Degree awarded 2023</span><span lang="es">SAE Institute México · 2019–2021 · Titulado en 2023</span></span>
+            </li>
+            <li>
+              <strong><span lang="en">Diploma in Interactive Animation</span><span lang="es">Diplomado en Animación Interactiva</span></strong>
+              <span class="list__meta">SAE Institute México · 2019–2021</span>
+            </li>
+            <li>
+              <strong>World Design for Video Games</strong>
+              <span class="list__meta"><span lang="en">California Institute of the Arts (Coursera) · 2021</span><span lang="es">California Institute of the Arts (Coursera) · 2021</span></span>
+            </li>
+            <li>
+              <strong>Basic Drawing Workshop</strong>
+              <span class="list__meta">SAE Institute México · 2018–2019</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="about__block reveal">
+          <h3 class="block__title"><span lang="en">Tools</span><span lang="es">Herramientas</span></h3>
+          <ul class="chips">
+            <li>Maya</li><li>Substance Painter</li><li>Unity</li>
+            <li>Photoshop</li><li>Illustrator</li><li>Adobe XD</li>
+            <li>After Effects</li><li>Premiere</li><li>Audition</li>
+            <li>Ableton</li><li>CapCut</li><li>Canva</li>
+            <li>WordPress</li><li>Elementor</li><li>HTML / CSS</li>
+          </ul>
+
+          <h3 class="block__title"><span lang="en">Languages</span><span lang="es">Idiomas</span></h3>
+          <ul class="list list--compact">
+            <li><strong><span lang="en">Spanish</span><span lang="es">Español</span></strong><span class="list__meta"><span lang="en">Native</span><span lang="es">Nativo</span></span></li>
+            <li><strong><span lang="en">English</span><span lang="es">Inglés</span></strong><span class="list__meta"><span lang="en">Upper-Intermediate</span><span lang="es">Intermedio-Alto</span></span></li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- ===== EXPERIENCE ===== -->
     <section id="experience" class="section">
-      <h2 class="section__title reveal">Experience</h2>
-      <p class="section__text reveal">Coming soon.</p>
+      <h2 class="section__title reveal">
+        <span lang="en">Experience</span><span lang="es">Experiencia</span>
+      </h2>
+
+      <ol class="timeline">
+
+        <!-- HRIntelligence -->
+        <li class="job reveal">
+          <p class="job__date"><span lang="en">Jul – Oct 2026</span><span lang="es">Jul – Oct 2026</span></p>
+          <div class="job__body">
+            <h3 class="job__company">HRIntelligence</h3>
+            <p class="job__role"><span lang="en">Graphic Designer · Design Coordination</span><span lang="es">Diseñador Gráfico · Coordinación de Diseño</span></p>
+            <ul class="job__tasks">
+              <li><span lang="en">Led the design area, sending weekly progress reports to the marketing team.</span><span lang="es">Llevé el área de diseño y entregaba reportes semanales de avances al equipo de marketing.</span></li>
+              <li><span lang="en">Built and maintained two company websites in WordPress / Elementor, including custom-coded widgets.</span><span lang="es">Construí y mantuve dos sitios web de la empresa en WordPress / Elementor, con widgets de código propio.</span></li>
+              <li><span lang="en">Designed the landing pages for HRI and MIMO-MAT.</span><span lang="es">Diseñé las landing pages de HRI y de MIMO-MAT.</span></li>
+              <li><span lang="en">Produced around 12 LinkedIn posts per month.</span><span lang="es">Produje alrededor de 12 publicaciones de LinkedIn al mes.</span></li>
+              <li><span lang="en">Created visual materials to support the HR team.</span><span lang="es">Creé materiales visuales de apoyo para Recursos Humanos.</span></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Freelance -->
+        <li class="job reveal">
+          <p class="job__date"><span lang="en">Jan 2025 – Apr 2026</span><span lang="es">Ene 2025 – Abr 2026</span></p>
+          <div class="job__body">
+            <h3 class="job__company">Freelance</h3>
+            <p class="job__role"><span lang="en">General Designer</span><span lang="es">Diseñador General</span></p>
+            <ul class="job__tasks">
+              <li><span lang="en">PEO (tour operator): reels, motion graphics, travel package flyers and custom designs.</span><span lang="es">PEO (operadora de viajes): reels, motion graphics, flyers de paquetes y diseños a la medida.</span></li>
+              <li><span lang="en">Multi-brand car dealership: seasonal promotions and social media videos.</span><span lang="es">Agencia automotriz multimarca: promociones de temporada y videos para redes.</span></li>
+              <li><span lang="en">Independent entrepreneurs: logos and brand identity.</span><span lang="es">Emprendedores independientes: logotipos e identidad de marca.</span></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Cimbramex -->
+        <li class="job reveal">
+          <p class="job__date"><span lang="en">Jan – Dec 2024</span><span lang="es">Ene – Dic 2024</span></p>
+          <div class="job__body">
+            <h3 class="job__company">Cimbramex</h3>
+            <p class="job__role"><span lang="en">Graphic Designer</span><span lang="es">Diseñador Gráfico</span></p>
+            <ul class="job__tasks">
+              <li><span lang="en">Lead designer for digital and print material: 23 product catalogs, business cards, email signatures and infographics.</span><span lang="es">Diseñador líder de material digital e impreso: 23 catálogos de producto, tarjetas de presentación, firmas de correo e infografías.</span></li>
+              <li><span lang="en">Commemorative variants of the company logo.</span><span lang="es">Variantes conmemorativas del logotipo de la empresa.</span></li>
+              <li><span lang="en">Internal video series and motion graphics, plus SharePoint microsites for the intranet.</span><span lang="es">Serie de videos internos y motion graphics, además de micrositios de SharePoint para la intranet.</span></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Dinamic Company -->
+        <li class="job reveal">
+          <p class="job__date"><span lang="en">Aug – Dec 2023</span><span lang="es">Ago – Dic 2023</span></p>
+          <div class="job__body">
+            <h3 class="job__company">Dinamic Company</h3>
+            <p class="job__role"><span lang="en">Freelance Designer</span><span lang="es">Diseñador Freelance</span></p>
+            <ul class="job__tasks">
+              <li><span lang="en">Image editing and design for social media campaigns.</span><span lang="es">Edición de imagen y diseño para campañas en redes sociales.</span></li>
+              <li><span lang="en">Internal templates, vector portrait illustration and survey data visualization.</span><span lang="es">Plantillas internas, ilustración vectorial de retrato y visualización de datos de encuestas.</span></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Quarx/Synnex -->
+        <li class="job reveal">
+          <p class="job__date"><span lang="en">Jan – Jun 2023</span><span lang="es">Ene – Jun 2023</span></p>
+          <div class="job__body">
+            <h3 class="job__company">Quarx / Synnex</h3>
+            <p class="job__role"><span lang="en">Freelance 3D Designer</span><span lang="es">Diseñador 3D Freelance</span></p>
+            <ul class="job__tasks">
+              <li><span lang="en">Laid the foundations of the company's new corporate image, including a 3D brand concept.</span><span lang="es">Establecí las bases de la nueva imagen corporativa de la empresa, con un concepto de marca en 3D.</span></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- CESCIJUC -->
+        <li class="job reveal">
+          <p class="job__date"><span lang="en">Nov – Dec 2022</span><span lang="es">Nov – Dic 2022</span></p>
+          <div class="job__body">
+            <h3 class="job__company">CESCIJUC</h3>
+            <p class="job__role"><span lang="en">Freelance Animator</span><span lang="es">Animador Freelance</span></p>
+            <ul class="job__tasks">
+              <li><span lang="en">Christmas promotional video in 3D animation.</span><span lang="es">Promocional navideño en animación 3D.</span></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Natural Balance -->
+        <li class="job reveal">
+          <p class="job__date"><span lang="en">Aug – Oct 2022</span><span lang="es">Ago – Oct 2022</span></p>
+          <div class="job__body">
+            <h3 class="job__company">Natural Balance</h3>
+            <p class="job__role"><span lang="en">Freelance Animator</span><span lang="es">Animador Freelance</span></p>
+            <ul class="job__tasks">
+              <li><span lang="en">Animated promotional video for the product catalog.</span><span lang="es">Video promocional animado de su catálogo de productos.</span></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Hibe México -->
+        <li class="job reveal">
+          <p class="job__date"><span lang="en">Jan – Jul 2022</span><span lang="es">Ene – Jul 2022</span></p>
+          <div class="job__body">
+            <h3 class="job__company">Hibe México</h3>
+            <p class="job__role"><span lang="en">Creative Director</span><span lang="es">Director Creativo</span></p>
+            <ul class="job__tasks">
+              <li><span lang="en">Lead 3D modeler and character designer for a metaverse project.</span><span lang="es">Modelador 3D principal y diseñador de personajes para un proyecto de metaverso.</span></li>
+              <li><span lang="en">Conceptualized and built the metaverse zones, and edited the presentation trailer.</span><span lang="es">Conceptualicé y construí las zonas del metaverso, y edité el tráiler de presentación.</span></li>
+            </ul>
+          </div>
+        </li>
+
+      </ol>
     </section>
 
-    <!-- ===== WORK ===== -->
+    <!-- ===== WORK (se llena en el siguiente paso) ===== -->
     <section id="work" class="section">
-      <h2 class="section__title reveal">Selected work</h2>
-      <p class="section__text reveal">Coming soon.</p>
+      <h2 class="section__title reveal">
+        <span lang="en">Selected work</span><span lang="es">Proyectos destacados</span>
+      </h2>
+      <p class="section__text reveal">
+        <span lang="en">Coming soon.</span><span lang="es">Muy pronto.</span>
+      </p>
     </section>
 
     <!-- ===== CONTACT ===== -->
-    <section id="contact" class="section">
-      <h2 class="section__title reveal">Contact</h2>
-      <p class="section__text reveal">Coming soon.</p>
+    <section id="contact" class="section contact">
+      <h2 class="section__title reveal">
+        <span lang="en">Let's work together</span><span lang="es">Trabajemos juntos</span>
+      </h2>
+      <p class="section__text reveal">
+        <span lang="en">Have a project in mind or a position to fill? Write me and I'll get back to you.</span>
+        <span lang="es">¿Tienes un proyecto en mente o una vacante? Escríbeme y te respondo.</span>
+      </p>
+
+      <a class="contact__mail reveal" href="mailto:fernando.mzh@outlook.com">fernando.mzh@outlook.com</a>
+
+      <ul class="contact__links reveal">
+        <li><a href="https://www.linkedin.com/in/frnandomh" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/fer.mezh" target="_blank" rel="noopener">Instagram</a></li>
+        <li><span lang="en">Mexico City</span><span lang="es">Ciudad de México</span></li>
+      </ul>
     </section>
 
   </main>
+
+  <footer class="footer">
+    <p>© 2026 Fernando Meza Hernández</p>
+  </footer>
 
   <!-- Animaciones (GSAP) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
