@@ -1,7 +1,21 @@
-// Activar el plugin de animaciones con scroll
+// ===== IDIOMA EN | ES =====
+const langButton = document.querySelector(".lang-toggle");
+
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  try { localStorage.setItem("lang", lang); } catch (e) {}
+  if (window.ScrollTrigger) ScrollTrigger.refresh(); // recalcula animaciones porque cambian los altos
+}
+
+langButton.addEventListener("click", () => {
+  const next = document.documentElement.lang === "es" ? "en" : "es";
+  setLang(next);
+});
+
+// ===== ANIMACIONES =====
 gsap.registerPlugin(ScrollTrigger);
 
-// Animación de entrada del hero
+// Entrada del hero
 gsap.from(".hero__kicker, .hero__title, .hero__sub", {
   y: 40,
   opacity: 0,
