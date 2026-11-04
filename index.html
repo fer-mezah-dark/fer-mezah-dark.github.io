@@ -161,6 +161,7 @@
               <li><span lang="en">Produced around 12 LinkedIn posts per month.</span><span lang="es">Produje alrededor de 12 publicaciones de LinkedIn al mes.</span></li>
               <li><span lang="en">Created visual materials to support the HR team.</span><span lang="es">Creé materiales visuales de apoyo para Recursos Humanos.</span></li>
             </ul>
+            <button class="job__link" type="button" data-open="hri"><span lang="en">View case study</span><span lang="es">Ver caso de estudio</span> &rarr;</button>
           </div>
         </li>
 
@@ -257,14 +258,26 @@
       </ol>
     </section>
 
-    <!-- ===== WORK (se llena en el siguiente paso) ===== -->
-    <section id="work" class="section">
+    <!-- ===== WORK ===== -->
+    <!-- Las tarjetas se crean solas a partir de js/projects.js -->
+    <section id="work" class="section section--wide">
       <h2 class="section__title reveal">
         <span lang="en">Selected work</span><span lang="es">Proyectos destacados</span>
       </h2>
-      <p class="section__text reveal">
-        <span lang="en">Coming soon.</span><span lang="es">Muy pronto.</span>
-      </p>
+      <div class="grid grid--featured" id="featured-grid"></div>
+
+      <h3 class="subsection__title reveal">
+        <span lang="en">More projects</span><span lang="es">Más proyectos</span>
+      </h3>
+      <div class="filters reveal" role="group" aria-label="Filter">
+        <button class="filter is-active" data-filter="all"><span lang="en">All</span><span lang="es">Todo</span></button>
+        <button class="filter" data-filter="3d">3D</button>
+        <button class="filter" data-filter="games"><span lang="en">Games</span><span lang="es">Videojuegos</span></button>
+        <button class="filter" data-filter="video"><span lang="en">Video &amp; Audio</span><span lang="es">Video y Audio</span></button>
+        <button class="filter" data-filter="uiux">UI/UX</button>
+        <button class="filter" data-filter="graphic"><span lang="en">Graphic</span><span lang="es">Gráfico</span></button>
+      </div>
+      <div class="grid grid--more" id="more-grid"></div>
     </section>
 
     <!-- ===== CONTACT ===== -->
@@ -288,6 +301,12 @@
 
   </main>
 
+  <!-- ===== VENTANA DE DETALLE DEL PROYECTO ===== -->
+  <dialog class="modal" id="project-modal">
+    <button class="modal__close" type="button" aria-label="Close">&times;</button>
+    <div class="modal__content" id="modal-content"></div>
+  </dialog>
+
   <footer class="footer">
     <p>© 2026 Fernando Meza Hernández</p>
   </footer>
@@ -295,6 +314,7 @@
   <!-- Animaciones (GSAP) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/projects.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
