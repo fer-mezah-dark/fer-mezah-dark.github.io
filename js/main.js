@@ -78,12 +78,28 @@ function openProject(id) {
   const p = PROJECTS.find((x) => x.id === id);
   if (!p) return;
 
-  const videos = p.videos.map((v) => `
+  const ytHTML = (v) => `
     <div class="modal__video">
       <iframe src="https://www.youtube-nocookie.com/embed/${v}" title="${p.title}" loading="lazy"
         allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
-    </div>`).join("");
-  const images = p.images.map((src) => `<img src="${src}" alt="${p.title}" loading="lazy">`).join("");
+    </div>`;
+  const imgHTML = (src) => `<img src="${src}" alt="${p.title}" loading="lazy">`;
+  const sketchfabHTML = (uid) => `
+    <div class="modal__video">
+      <iframe src="https://sketchfab.com/models/${uid}/embed?ui_theme=dark" title="${p.title} 3D" loading="lazy"
+        allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe>
+    </div>`;
+
+  let videos = "", images = "";
+  if (p.media) {
+    // Orden libre: "assets/img/x.jpg" = imagen, { yt: "ID" } = YouTube, { sketchfab: "UID" } = visor 3D
+    images = p.media.map((m) =>
+      typeof m === "string" ? imgHTML(m) : m.yt ? ytHTML(m.yt) : m.sketchfab ? sketchfabHTML(m.sketchfab) : ""
+    ).join("");
+  } else {
+    videos = p.videos.map(ytHTML).join("");
+    images = p.images.map(imgHTML).join("");
+  }
   const empty = (!videos && !images)
     ? `<div class="modal__empty">${bi({ en: "Images coming soon", es: "Imágenes muy pronto" })}</div>` : "";
   const links = p.links.length
