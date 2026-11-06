@@ -41,7 +41,23 @@ const PROJECTS = [
       en: "Creative direction for a metaverse project: I conceptualized and built its worlds, designed and modeled the characters, the in-world currency and the start screen, and edited the presentation trailer.",
       es: "Dirección creativa de un proyecto de metaverso: conceptualicé y construí sus mundos, diseñé y modelé los personajes, la moneda y la pantalla de inicio, y edité el tráiler de presentación."
     },
-    cover: "", images: [], videos: [], links: [],
+    cover: "assets/img/hibe-cover.jpg",
+    images: [
+      "assets/img/hibe-01.jpg",
+      "assets/img/hibe-02.jpg",
+      "assets/img/hibe-03.jpg",
+      "assets/img/hibe-04.jpg",
+      "assets/img/hibe-05.jpg",
+      "assets/img/hibe-06.jpg",
+      "assets/img/hibe-07.jpg",
+      "assets/img/hibe-08.jpg",
+      "assets/img/hibe-09.jpg",
+      "assets/img/hibe-10.jpg",
+      "assets/img/hibe-11.jpg",
+      "assets/img/hibe-12.jpg"
+    ],
+    videos: ["qXPlidl938U", "X7ITsQ-jwp0"],
+    links: [],
     note: { en: "The avatar selection screen shown is a functional prototype.", es: "La pantalla de selección de avatar es un prototipo funcional." }
   },
   {
