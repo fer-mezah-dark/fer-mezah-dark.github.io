@@ -73,19 +73,23 @@ const PROJECTS = [
       es: "Un personaje original llevado del primer boceto a un modelo 3D terminado: paleta de color, turnaround, escultura, texturizado y animación. Incluye a Atlante, un enemigo y props del mismo universo."
     },
     cover: "assets/img/nereida-cover.jpg",
-    images: [
+    // Orden de la galería: imágenes, videos (yt) y visor 3D (sketchfab)
+    media: [
       "assets/img/nereida-01.jpg",
       "assets/img/nereida-02.jpg",
       "assets/img/nereida-03.jpg",
       "assets/img/nereida-04.jpg",
       "assets/img/nereida-05.jpg",
+      { sketchfab: "0fe3bb819f79443c88e999f2d2d385cc" },
+      { yt: "E1cBdqNq3uU" },
       "assets/img/nereida-06.jpg",
+      { yt: "a0yTa96HO_E" },
       "assets/img/nereida-07.jpg",
       "assets/img/nereida-08.jpg"
     ],
-    videos: ["E1cBdqNq3uU", "a0yTa96HO_E"],
+    images: [], videos: [],
     links: [
-      { en: "View in 3D", es: "Ver en 3D", url: "https://skfb.ly/6SyxR" }
+      { en: "View on Sketchfab", es: "Ver en Sketchfab", url: "https://sketchfab.com/3d-models/nereida-0fe3bb819f79443c88e999f2d2d385cc" }
     ]
   },
   {
