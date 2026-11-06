@@ -64,7 +64,7 @@ const PROJECTS = [
     id: "nereida",
     featured: true,
     cats: ["3d", "games"],
-    year: "",
+    year: "2020",
     title: "Nereida",
     role: { en: "Character Designer · 3D Artist", es: "Diseñador de personajes · Artista 3D" },
     tools: "Photoshop · Maya · Substance Painter",
@@ -72,7 +72,21 @@ const PROJECTS = [
       en: "An original character taken from the first sketch to a finished 3D model: color palette, turnaround, sculpting, texturing and animation. Includes Atlante, an enemy and props from the same universe.",
       es: "Un personaje original llevado del primer boceto a un modelo 3D terminado: paleta de color, turnaround, escultura, texturizado y animación. Incluye a Atlante, un enemigo y props del mismo universo."
     },
-    cover: "", images: [], videos: [], links: []
+    cover: "assets/img/nereida-cover.jpg",
+    images: [
+      "assets/img/nereida-01.jpg",
+      "assets/img/nereida-02.jpg",
+      "assets/img/nereida-03.jpg",
+      "assets/img/nereida-04.jpg",
+      "assets/img/nereida-05.jpg",
+      "assets/img/nereida-06.jpg",
+      "assets/img/nereida-07.jpg",
+      "assets/img/nereida-08.jpg"
+    ],
+    videos: ["E1cBdqNq3uU", "a0yTa96HO_E"],
+    links: [
+      { en: "View in 3D", es: "Ver en 3D", url: "https://skfb.ly/6SyxR" }
+    ]
   },
   {
     id: "xturbo",
