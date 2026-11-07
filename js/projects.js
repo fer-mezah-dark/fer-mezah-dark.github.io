@@ -128,15 +128,27 @@ const PROJECTS = [
     id: "singer",
     featured: true,
     cats: ["3d"],
-    year: "",
+    year: "2022",
     title: "Singer 29-4",
     role: { en: "3D Artist", es: "Artista 3D" },
     tools: "Maya · Substance Painter",
     desc: {
-      en: "Realistic 3D model of a classic Singer 29-4 sewing machine, with detailed modeling and PBR texturing.",
-      es: "Modelo 3D realista de una máquina de coser Singer 29-4 clásica, con modelado detallado y texturizado PBR."
+      en: "Realistic 3D recreation of the classic Singer Model 29-4 sewing machine: hard-surface modeling, PBR texturing, lighting and high-quality renders that capture the aesthetics and details of the original.",
+      es: "Recreación 3D realista de la clásica máquina de coser Singer Modelo 29-4: modelado hard-surface, texturizado PBR, iluminación y renders de alta calidad que capturan la estética y los detalles de la original."
     },
-    cover: "", images: [], videos: [], links: []
+    cover: "assets/img/singer-cover.jpg",
+    // Orden de la galería: imágenes, videos (yt) y visor 3D (sketchfab)
+    media: [
+      { yt: "zCI0gJuGE0I" },
+      "assets/img/singer-01.jpg",
+      "assets/img/singer-02.jpg",
+      "assets/img/singer-03.jpg",
+      "assets/img/singer-04.jpg",
+      "assets/img/singer-05.jpg",
+      "assets/img/singer-06.jpg",
+      "assets/img/singer-07.jpg"
+    ],
+    images: [], videos: [], links: []
   },
   {
     id: "quarx",
