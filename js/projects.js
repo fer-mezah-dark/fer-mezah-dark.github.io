@@ -96,15 +96,33 @@ const PROJECTS = [
     id: "xturbo",
     featured: true,
     cats: ["games", "uiux", "video"],
-    year: "",
+    year: "2021",
     title: "X-Turbo Ball: Extreme",
-    role: { en: "Game Designer · Developer", es: "Diseñador y desarrollador del juego" },
+    role: { en: "Game Designer · Developer · UI Designer", es: "Diseñador y desarrollador del juego · Diseñador UI" },
     tools: "Unity · Maya · Photoshop · Premiere",
     desc: {
-      en: "My own video game: gameplay design, development, interface and the launch trailer.",
-      es: "Mi propio videojuego: diseño de juego, desarrollo, interfaz y tráiler de lanzamiento."
+      en: "My own video game, from concept to launch: gameplay design, development, a synthwave visual style, the user interface (animated main menu, credits and navigation flow) and the launch trailer.",
+      es: "Mi propio videojuego, del concepto al lanzamiento: diseño de juego, desarrollo, un estilo visual synthwave, la interfaz de usuario (menú principal animado, créditos y flujo de navegación) y el tráiler de lanzamiento."
     },
-    cover: "", images: [], videos: [], links: []
+    cover: "assets/img/xturbo-cover.jpg",
+    // Orden de la galería: imágenes, videos (yt) y visor 3D (sketchfab)
+    media: [
+      { yt: "SR2JiLkokGo" },
+      "assets/img/xturbo-01.jpg",
+      "assets/img/xturbo-02.jpg",
+      "assets/img/xturbo-03.jpg",
+      "assets/img/xturbo-04.jpg",
+      "assets/img/xturbo-05.jpg",
+      { yt: "8Pt7Th7b3dg" },
+      "assets/img/xturbo-06.jpg",
+      { yt: "vThw0sJC2x4" },
+      { yt: "JttG54ShaUQ" }
+    ],
+    images: [], videos: [],
+    links: [
+      { en: "Download on Game Jolt", es: "Descargar en Game Jolt", url: "https://gamejolt.com/games/x-turbogamextreme/606490" }
+    ],
+    note: { en: "Co-programming: Marcos Samuel Valle León.", es: "Coprogramación: Marcos Samuel Valle León." }
   },
   {
     id: "singer",
