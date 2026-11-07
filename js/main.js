@@ -128,12 +128,86 @@ function closeProject() {
   modal.close();
 }
 
+// ===== VISOR DE IMÁGENES CON ZOOM =====
+const lightbox = document.createElement("div");
+lightbox.className = "lightbox";
+lightbox.innerHTML = `
+  <button class="lightbox__close" type="button" aria-label="Close">&times;</button>
+  <div class="lightbox__stage"><img alt=""></div>
+  <p class="lightbox__hint">${bi({ en: "Click to zoom · Drag to move · Esc to close", es: "Clic para acercar · Arrastra para moverte · Esc para cerrar" })}</p>`;
+modal.appendChild(lightbox);
+const lbStage = lightbox.querySelector(".lightbox__stage");
+const lbImg = lightbox.querySelector("img");
+let drag = null;
+let moved = false;
+
+function openLightbox(src) {
+  lbImg.src = src;
+  lightbox.classList.remove("is-zoomed");
+  lightbox.classList.add("is-open");
+}
+function closeLightbox() {
+  lightbox.classList.remove("is-open", "is-zoomed");
+}
+
+// Clic en una imagen de la galería: abre el visor
+modalContent.addEventListener("click", (e) => {
+  const img = e.target.closest(".modal__media img");
+  if (img) openLightbox(img.src);
+});
+
+// Clic en la imagen del visor: acerca / aleja en el punto donde diste clic
+lbImg.addEventListener("click", (e) => {
+  if (moved) return;
+  const r = lbImg.getBoundingClientRect();
+  const fx = (e.clientX - r.left) / r.width;
+  const fy = (e.clientY - r.top) / r.height;
+  const zoomed = lightbox.classList.toggle("is-zoomed");
+  if (zoomed) {
+    requestAnimationFrame(() => {
+      lbStage.scrollLeft = fx * lbImg.offsetWidth - lbStage.clientWidth / 2;
+      lbStage.scrollTop = fy * lbImg.offsetHeight - lbStage.clientHeight / 2;
+    });
+  }
+});
+
+// Arrastrar con el mouse para moverse cuando está acercada
+lbStage.addEventListener("mousedown", (e) => {
+  if (!lightbox.classList.contains("is-zoomed")) return;
+  e.preventDefault();
+  drag = { x: e.clientX, y: e.clientY, left: lbStage.scrollLeft, top: lbStage.scrollTop };
+  moved = false;
+  lightbox.classList.add("is-dragging");
+});
+window.addEventListener("mousemove", (e) => {
+  if (!drag) return;
+  const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+  if (Math.abs(dx) + Math.abs(dy) > 5) moved = true;
+  lbStage.scrollLeft = drag.left - dx;
+  lbStage.scrollTop = drag.top - dy;
+});
+window.addEventListener("mouseup", () => {
+  if (!drag) return;
+  drag = null;
+  lightbox.classList.remove("is-dragging");
+  setTimeout(() => { moved = false; }, 0);
+});
+
+// Cerrar el visor: botón X, clic en el fondo o tecla Esc
+lightbox.querySelector(".lightbox__close").addEventListener("click", closeLightbox);
+lbStage.addEventListener("click", (e) => { if (e.target === lbStage && !moved) closeLightbox(); });
+modal.addEventListener("cancel", (e) => {
+  if (lightbox.classList.contains("is-open")) { e.preventDefault(); closeLightbox(); }
+});
+
 modal.addEventListener("close", () => {
+  closeLightbox();
   document.body.classList.remove("modal-open");
   modalContent.innerHTML = ""; // detiene los videos al cerrar
 });
 modal.querySelector(".modal__close").addEventListener("click", closeProject);
 modal.addEventListener("click", (e) => {             // clic fuera de la ventana
+  if (lightbox.classList.contains("is-open")) return;  // no cerrar si el visor de zoom está abierto
   const r = modal.getBoundingClientRect();
   const outside = e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
   if (outside) closeProject();
