@@ -207,7 +207,7 @@ modal.addEventListener("close", () => {
 });
 modal.querySelector(".modal__close").addEventListener("click", closeProject);
 modal.addEventListener("click", (e) => {             // clic fuera de la ventana
-  if (lightbox.classList.contains("is-open")) return;  // no cerrar si el visor de zoom está abierto
+  if (lightbox.contains(e.target)) return;             // clics dentro del visor de zoom no cierran el proyecto
   const r = modal.getBoundingClientRect();
   const outside = e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
   if (outside) closeProject();
