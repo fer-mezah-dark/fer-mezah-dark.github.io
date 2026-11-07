@@ -481,6 +481,67 @@ html[lang="es"] .lang-toggle [data-l="es"] { color: var(--gold); font-weight: 60
 .modal__links a:hover { background: var(--gold); color: var(--bg); }
 .modal__note { margin-top: 2rem; color: var(--muted); font-size: 0.8rem; font-style: italic; }
 body.modal-open { overflow: hidden; }
+.modal__media img { cursor: zoom-in; }
+
+/* ===== VISOR DE IMÁGENES CON ZOOM ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: rgba(5, 5, 7, 0.96);
+  display: none;
+}
+.lightbox.is-open { display: block; }
+.lightbox__stage {
+  position: absolute;
+  inset: 0;
+  overflow: auto;
+  display: grid;
+  place-items: center;
+  padding: 4rem 2rem;
+}
+.lightbox__stage img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 8rem);
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.lightbox.is-zoomed .lightbox__stage { display: block; padding: 0; }
+.lightbox.is-zoomed .lightbox__stage img {
+  max-width: none;
+  max-height: none;
+  width: 250%;
+  cursor: grab;
+}
+.lightbox.is-dragging .lightbox__stage img { cursor: grabbing; }
+.lightbox__close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  z-index: 2;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(13,13,15,0.85);
+  color: var(--text);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.lightbox__close:hover { border-color: var(--gold); color: var(--gold); }
+.lightbox__hint {
+  position: absolute;
+  bottom: 1rem; left: 0; right: 0;
+  z-index: 2;
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  pointer-events: none;
+}
+.lightbox.is-zoomed .lightbox__hint { display: none; }
 
 /* ===== CONTACT ===== */
 .contact { text-align: left; }
