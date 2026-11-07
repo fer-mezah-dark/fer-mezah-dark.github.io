@@ -318,7 +318,7 @@ html[lang="es"] .lang-toggle [data-l="es"] { color: var(--gold); font-weight: 60
 
 /* ===== WORK ===== */
 .section--wide { max-width: 1400px; }
-.grid { display: grid; gap: 1.5rem; }
+.grid { display: grid; gap: 1.5rem; align-items: start; }
 .grid--featured { grid-template-columns: repeat(3, 1fr); }
 .grid--more { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 
