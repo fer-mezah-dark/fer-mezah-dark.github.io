@@ -159,10 +159,21 @@ const PROJECTS = [
     role: { en: "Freelance 3D Designer", es: "Diseñador 3D Freelance" },
     tools: "Maya · Substance Painter · Photoshop",
     desc: {
-      en: "I laid the foundations of the company's new corporate image, including a 3D brand concept based on the figure of Janus.",
-      es: "Establecí las bases de la nueva imagen corporativa de la empresa, con un concepto de marca en 3D basado en la figura de Jano."
+      en: "3D concept for the company's new corporate image: a bust of Janus, the two-faced Roman god who looks to both the past and the future, as a symbol of duality and change for the brand.",
+      es: "Concepto 3D para la nueva imagen corporativa de la empresa: un busto de Jano, el dios romano de dos rostros que mira al pasado y al futuro, como símbolo de dualidad y cambio para la marca."
     },
-    cover: "", images: [], videos: [], links: []
+    cover: "assets/img/quarx-cover.jpg",
+    // Orden de la galería: imágenes, videos (yt) y visor 3D (sketchfab)
+    media: [
+      { yt: "EasazmvOrYI" },
+      "assets/img/quarx-01.jpg",
+      "assets/img/quarx-02.jpg",
+      "assets/img/quarx-03.jpg",
+      "assets/img/quarx-04.jpg",
+      "assets/img/quarx-05.jpg"
+    ],
+    images: [], videos: [], links: [],
+    note: { en: "Music in the video: Hudson.", es: "Música del video: Hudson." }
   },
   {
     id: "espectro",
