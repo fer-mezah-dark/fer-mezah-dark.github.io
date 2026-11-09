@@ -214,10 +214,25 @@ const PROJECTS = [
     role: { en: "Freelance Designer", es: "Diseñador Freelance" },
     tools: "Photoshop · Illustrator · Premiere · Canva",
     desc: {
-      en: "A consistent visual system for a tour operator: travel package flyers, custom pieces, an infographic, a promotional cinematic and social media videos.",
-      es: "Un sistema visual consistente para una operadora de viajes: flyers de paquetes, diseños a la medida, una infografía, una cinemática promocional y videos para redes."
+      en: "A consistent visual system for a tour operator and its brands (Consolida, Pangea): flight and travel package flyers, custom pieces, an infographic, a promotional cinematic and vertical videos for social media.",
+      es: "Un sistema visual consistente para una operadora de viajes y sus marcas (Consolida, Pangea): flyers de vuelos y paquetes, diseños personalizados, una infografía, una cinemática promocional y videos verticales para redes sociales."
     },
-    cover: "", images: [], videos: [], links: []
+    cover: "assets/img/peo-cover.jpg",
+    // Orden de la galería: imágenes, videos (yt), videos verticales (short) y visor 3D (sketchfab)
+    media: [
+      { yt: "HL8yuCd-7aE" },
+      "assets/img/peo-01.jpg",
+      "assets/img/peo-02.jpg",
+      "assets/img/peo-03.jpg",
+      "assets/img/peo-04.jpg",
+      "assets/img/peo-05.jpg",
+      { short: "0Py_S_H9sFs" },
+      { short: "-tlwiq5qwk8" },
+      "assets/img/peo-06.jpg",
+      "assets/img/peo-07.jpg",
+      "assets/img/peo-08.jpg"
+    ],
+    images: [], videos: [], links: []
   },
   {
     id: "cimbramex",
