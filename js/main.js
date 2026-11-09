@@ -92,10 +92,26 @@ function openProject(id) {
 
   let videos = "", images = "";
   if (p.media) {
-    // Orden libre: "assets/img/x.jpg" = imagen, { yt: "ID" } = YouTube, { sketchfab: "UID" } = visor 3D
-    images = p.media.map((m) =>
-      typeof m === "string" ? imgHTML(m) : m.yt ? ytHTML(m.yt) : m.sketchfab ? sketchfabHTML(m.sketchfab) : ""
-    ).join("");
+    // Orden libre: "assets/img/x.jpg" = imagen, { yt: "ID" } = YouTube horizontal,
+    // { short: "ID" } = YouTube vertical (Shorts), { sketchfab: "UID" } = visor 3D
+    const shortHTML = (v) => `
+      <div class="modal__short">
+        <iframe src="https://www.youtube-nocookie.com/embed/${v}" title="${p.title}" loading="lazy"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+      </div>`;
+    const parts = [];
+    let shortsRow = [];
+    const flushShorts = () => {
+      if (shortsRow.length) parts.push(`<div class="modal__shorts">${shortsRow.join("")}</div>`);
+      shortsRow = [];
+    };
+    p.media.forEach((m) => {
+      if (m && m.short) { shortsRow.push(shortHTML(m.short)); return; } // Shorts seguidos van lado a lado
+      flushShorts();
+      parts.push(typeof m === "string" ? imgHTML(m) : m.yt ? ytHTML(m.yt) : m.sketchfab ? sketchfabHTML(m.sketchfab) : "");
+    });
+    flushShorts();
+    images = parts.join("");
   } else {
     videos = p.videos.map(ytHTML).join("");
     images = p.images.map(imgHTML).join("");
