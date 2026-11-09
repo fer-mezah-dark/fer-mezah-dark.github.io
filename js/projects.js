@@ -179,15 +179,31 @@ const PROJECTS = [
     id: "espectro",
     featured: true,
     cats: ["3d", "games"],
-    year: "",
+    year: "2020",
     title: "Espectro",
     role: { en: "Concept Artist · 3D Artist (team project)", es: "Artista conceptual · Artista 3D (proyecto en equipo)" },
     tools: "Photoshop · Maya · Substance Painter · Unity",
     desc: {
-      en: "A creature game inspired by Mexican culture. I worked on concept art, 3D modeling, texturing and animation.",
-      es: "Un juego de criaturas inspirado en la cultura mexicana. Trabajé en arte conceptual, modelado 3D, texturizado y animación."
+      en: "A creature-collecting game proposal inspired by Mexican culture. My contribution: character concepts and their evolutions, 3D modeling, color and texturing, the animation of one of the creatures, and props for the environment.",
+      es: "Una propuesta de juego de criaturas coleccionables inspirada en la cultura mexicana. Mi aporte: conceptos de personajes y sus evoluciones, modelado 3D, color y texturizado, la animación de una de las criaturas y objetos para el escenario."
     },
-    cover: "", images: [], videos: [], links: []
+    cover: "assets/img/espectro-cover.jpg",
+    // Orden de la galería: imágenes, videos (yt) y visor 3D (sketchfab)
+    media: [
+      "assets/img/espectro-01.jpg",
+      "assets/img/espectro-02.jpg",
+      "assets/img/espectro-03.jpg",
+      "assets/img/espectro-04.jpg",
+      { yt: "oIR4NfrGJX8" },
+      "assets/img/espectro-05.jpg",
+      "assets/img/espectro-06.jpg",
+      "assets/img/espectro-07.jpg"
+    ],
+    images: [], videos: [], links: [],
+    note: {
+      en: "Team project with Sebastián Reynoso Ortiz Monasterio, Miguel García and Xavier Sierra. The pieces shown here are my own work.",
+      es: "Proyecto en equipo con Sebastián Reynoso Ortiz Monasterio, Miguel García y Xavier Sierra. Las piezas mostradas aquí son de mi autoría."
+    }
   },
   {
     id: "peo",
