@@ -21,12 +21,39 @@ const PROJECTS = [
     year: "2026",
     title: "HRIntelligence",
     role: { en: "Graphic Designer · Design Coordination", es: "Diseñador Gráfico · Coordinación de Diseño" },
-    tools: "WordPress · Elementor · HTML / CSS / JS · Photoshop · Illustrator",
+    tools: "WordPress · Elementor · HTML / CSS / JS · Photoshop · Illustrator · Canva",
     desc: {
-      en: "I led the design area of an HR consulting firm: two company websites built in WordPress / Elementor with custom-coded widgets, landing pages for HRI and its brand MIMO-MAT, and around 12 LinkedIn posts per month.",
-      es: "Llevé el área de diseño de una consultora de Recursos Humanos: dos sitios web de la empresa en WordPress / Elementor con widgets de código propio, landing pages para HRI y su marca MIMO-MAT, y alrededor de 12 publicaciones de LinkedIn al mes."
+      en: "I led the design area of an HR consulting firm: two websites built in WordPress / Elementor with custom-coded widgets (HRI and its brand MIMO-MAT), landing pages, around 12 LinkedIn posts per month, event invitations, campaigns for its partner SK Track (Lark) and the institutional brochure. In total: 2 websites, 2 landing pages and ~48 posts in 4 months.",
+      es: "Llevé el área de diseño de una consultora de Recursos Humanos: dos sitios web en WordPress / Elementor con widgets de código propio (HRI y su marca MIMO-MAT), landing pages, alrededor de 12 publicaciones de LinkedIn al mes, invitaciones a eventos, campañas para su socio SK Track (Lark) y el folleto institucional. En total: 2 sitios web, 2 landings y ~48 publicaciones en 4 meses."
     },
-    cover: "", images: [], videos: [], links: [],
+    cover: "assets/img/hri-cover.jpg",
+    // Orden de la galería: imágenes, videos (yt / short), subtítulos (label), cuadrículas (grid) y visor 3D (sketchfab)
+    media: [
+      { label: { en: "LinkedIn posts", es: "Publicaciones de LinkedIn" } },
+      { grid: [
+        "assets/img/hri-li-01.jpg", "assets/img/hri-li-02.jpg", "assets/img/hri-li-03.jpg",
+        "assets/img/hri-li-04.jpg", "assets/img/hri-li-05.jpg", "assets/img/hri-li-06.jpg",
+        "assets/img/hri-li-07.jpg", "assets/img/hri-li-08.jpg", "assets/img/hri-li-09.jpg",
+        "assets/img/hri-li-10.jpg", "assets/img/hri-li-11.jpg", "assets/img/hri-li-12.jpg"
+      ] },
+      { label: { en: "Special dates", es: "Fechas especiales" } },
+      { grid: [
+        "assets/img/hri-fecha-01.jpg", "assets/img/hri-fecha-02.jpg",
+        "assets/img/hri-fecha-03.jpg", "assets/img/hri-fecha-04.jpg"
+      ] },
+      { label: { en: "Events & campaigns · Lark / SK Track", es: "Eventos y campañas · Lark / SK Track" } },
+      "assets/img/hri-01.jpg",
+      "assets/img/hri-02.jpg",
+      "assets/img/hri-05.jpg",
+      { label: { en: "Institutional brochure", es: "Folleto institucional" } },
+      "assets/img/hri-03.jpg",
+      "assets/img/hri-04.jpg"
+    ],
+    images: [], videos: [],
+    links: [
+      { en: "HRI website", es: "Sitio de HRI", url: "https://hrimx.mx/" },
+      { en: "MIMO-MAT website", es: "Sitio de MIMO-MAT", url: "https://mimomat.com.mx/" }
+    ],
     note: { en: "Design delivered in 2026. The live sites may have changed since then.", es: "Diseño entregado en 2026. Los sitios en vivo pueden haber cambiado desde entonces." }
   },
   {
