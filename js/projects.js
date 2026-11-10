@@ -241,12 +241,34 @@ const PROJECTS = [
     year: "2024",
     title: "Cimbramex",
     role: { en: "Graphic Designer", es: "Diseñador Gráfico" },
-    tools: "Illustrator · Photoshop · After Effects · Premiere · SharePoint",
+    tools: "Illustrator · Photoshop · After Effects · Premiere · Canva · SharePoint",
     desc: {
-      en: "Corporate identity in print and digital: 23 product catalogs (CMYK), business cards, email signatures, infographics, commemorative logo variants, an internal video series and intranet microsites.",
-      es: "Identidad corporativa impresa y digital: 23 catálogos de producto (CMYK), tarjetas de presentación, firmas de correo, infografías, variantes conmemorativas del logo, una serie de videos internos y micrositios para la intranet."
+      en: "Lead designer for a construction formwork company: 23 print catalogs (rich black CMYK), business cards, email signatures, safety infographics and commemorative logo variants, plus corporate videos and the design of the company's SharePoint intranet microsites.",
+      es: "Diseñador líder en una empresa de cimbras para construcción: 23 catálogos impresos (negro intenso CMYK), tarjetas de presentación, firmas de correo, infografías de seguridad y variantes conmemorativas del logo, además de videos corporativos y el diseño de los micrositios de la intranet en SharePoint."
     },
-    cover: "", images: [], videos: [], links: []
+    cover: "assets/img/cimbramex-cover.jpg",
+    // Orden de la galería: imágenes, videos (yt), videos verticales (short) y visor 3D (sketchfab)
+    media: [
+      "assets/img/cimbramex-01.jpg",
+      "assets/img/cimbramex-02.jpg",
+      "assets/img/cimbramex-03.jpg",
+      "assets/img/cimbramex-04.jpg",
+      "assets/img/cimbramex-05.jpg",
+      "assets/img/cimbramex-06.jpg",
+      "assets/img/cimbramex-07.jpg",
+      "assets/img/cimbramex-08.jpg",
+      { yt: "IbXYfgW5Je8" },
+      { yt: "gDZXe__3KqU" },
+      { yt: "HE7_IVTct7M" },
+      { yt: "tzlU0eZdkuk" },
+      { yt: "s7iw6EzyL3M" },
+      { short: "IEU9tgYiUwk" }
+    ],
+    images: [], videos: [], links: [],
+    note: {
+      en: "The SharePoint microsites are shown through their videos, since the intranet is internal to the company.",
+      es: "Los micrositios de SharePoint se muestran a través de sus videos, ya que la intranet es interna de la empresa."
+    }
   },
 
   // ===================== MÁS PROYECTOS =====================
