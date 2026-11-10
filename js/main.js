@@ -93,7 +93,8 @@ function openProject(id) {
   let videos = "", images = "";
   if (p.media) {
     // Orden libre: "assets/img/x.jpg" = imagen, { yt: "ID" } = YouTube horizontal,
-    // { short: "ID" } = YouTube vertical (Shorts), { sketchfab: "UID" } = visor 3D
+    // { short: "ID" } = YouTube vertical (Shorts), { sketchfab: "UID" } = visor 3D,
+    // { label: {en, es} } = subtítulo, { grid: ["a.jpg", ...] } = cuadrícula de imágenes
     const shortHTML = (v) => `
       <div class="modal__short">
         <iframe src="https://www.youtube-nocookie.com/embed/${v}" title="${p.title}" loading="lazy"
@@ -108,6 +109,8 @@ function openProject(id) {
     p.media.forEach((m) => {
       if (m && m.short) { shortsRow.push(shortHTML(m.short)); return; } // Shorts seguidos van lado a lado
       flushShorts();
+      if (m && m.label) { parts.push(`<h3 class="modal__label">${bi(m.label)}</h3>`); return; }        // subtítulo
+      if (m && m.grid) { parts.push(`<div class="modal__grid">${m.grid.map(imgHTML).join("")}</div>`); return; } // cuadrícula
       parts.push(typeof m === "string" ? imgHTML(m) : m.yt ? ytHTML(m.yt) : m.sketchfab ? sketchfabHTML(m.sketchfab) : "");
     });
     flushShorts();
