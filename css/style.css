@@ -491,6 +491,83 @@ html[lang="es"] .lang-toggle [data-l="es"] { color: var(--gold); font-weight: 60
   gap: 0.75rem;
 }
 @media (max-width: 640px) { .modal__grid { grid-template-columns: repeat(2, 1fr); } }
+/* Sitio web en marcos de computadora y celular */
+.site {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+.mock { background: #1c1c20; border: 1px solid var(--line); }
+.mock--desktop { flex: 1; min-width: 0; border-radius: 10px; overflow: hidden; }
+.mock--phone {
+  flex: 0 0 230px;
+  border-radius: 28px;
+  padding: 10px;
+  border-width: 2px;
+}
+.mock__bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.55rem 0.9rem;
+  background: #232328;
+  border-bottom: 1px solid var(--line);
+}
+.mock__dots { display: flex; gap: 6px; }
+.mock__dots i { width: 10px; height: 10px; border-radius: 50%; background: #3a3a40; }
+.mock__dots i:first-child { background: #e0605a; }
+.mock__dots i:nth-child(2) { background: #e6b450; }
+.mock__dots i:nth-child(3) { background: #5cbf6a; }
+.mock__url {
+  flex: 1;
+  max-width: 320px;
+  background: #15151a;
+  border-radius: 999px;
+  padding: 0.2rem 0.9rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mock__screen {
+  position: relative;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: #fff;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) transparent;
+}
+.mock--desktop .mock__screen { aspect-ratio: 16 / 10; }
+.mock--phone .mock__screen { aspect-ratio: 9 / 19; border-radius: 20px; }
+.mock__screen img { display: block; width: 100%; height: auto; border: 0 !important; cursor: default !important; }
+.mock__more {                     /* aviso cuando la captura no llega hasta el final */
+  position: relative;
+  margin-top: -140px;
+  height: 140px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1rem;
+  background: linear-gradient(to bottom, rgba(13,13,15,0), rgba(13,13,15,0.95) 70%);
+  color: var(--gold);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.site__hint {
+  margin-top: -0.25rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+}
+@media (max-width: 760px) {
+  .site { flex-direction: column; align-items: center; }
+  .mock--desktop { width: 100%; }
+  .mock--phone { flex-basis: auto; width: 220px; }
+}
 .modal__empty {
   aspect-ratio: 16 / 9;
   border: 1px dashed var(--line);
