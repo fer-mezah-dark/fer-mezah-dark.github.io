@@ -508,7 +508,7 @@ body.modal-open { overflow: hidden; }
 .lightbox__stage {
   position: absolute;
   inset: 0;
-  overflow: auto;
+  overflow: hidden;
   display: grid;
   place-items: center;
   padding: 4rem 2rem;
@@ -517,18 +517,16 @@ body.modal-open { overflow: hidden; }
   display: block;
   max-width: 100%;
   max-height: calc(100vh - 8rem);
+  transform-origin: center center;
+  transition: transform 0.35s cubic-bezier(.2,.7,.2,1);
   cursor: zoom-in;
   user-select: none;
   -webkit-user-drag: none;
+  touch-action: none;
+  will-change: transform;
 }
-.lightbox.is-zoomed .lightbox__stage { display: block; padding: 0; }
-.lightbox.is-zoomed .lightbox__stage img {
-  max-width: none;
-  max-height: none;
-  width: 250%;
-  cursor: grab;
-}
-.lightbox.is-dragging .lightbox__stage img { cursor: grabbing; }
+.lightbox.is-max .lightbox__stage img { cursor: zoom-out; }
+.lightbox.is-dragging .lightbox__stage img { cursor: grabbing; transition: none; }
 .lightbox__close {
   position: absolute;
   top: 1rem; right: 1rem;
