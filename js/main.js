@@ -145,25 +145,49 @@ function closeProject() {
 }
 
 // ===== VISOR DE IMÁGENES CON ZOOM =====
+// Niveles de zoom: 1 = imagen completa, luego acercamiento intermedio y acercamiento máximo
+const ZOOM_LEVELS = [1, 1.6, 2.6];
+
 const lightbox = document.createElement("div");
 lightbox.className = "lightbox";
 lightbox.innerHTML = `
   <button class="lightbox__close" type="button" aria-label="Close">&times;</button>
-  <div class="lightbox__stage"><img alt=""></div>
-  <p class="lightbox__hint">${bi({ en: "Click to zoom · Drag to move · Esc to close", es: "Clic para acercar · Arrastra para moverte · Esc para cerrar" })}</p>`;
+  <div class="lightbox__stage"><img alt="" draggable="false"></div>
+  <p class="lightbox__hint">${bi({ en: "Click to zoom (2 levels) · Drag to move · Esc to close", es: "Clic para acercar (2 niveles) · Arrastra para moverte · Esc para cerrar" })}</p>`;
 modal.appendChild(lightbox);
 const lbStage = lightbox.querySelector(".lightbox__stage");
 const lbImg = lightbox.querySelector("img");
+
+let zoomIndex = 0;          // posición en ZOOM_LEVELS
+let tx = 0, ty = 0;         // desplazamiento de la imagen (px)
 let drag = null;
 let moved = false;
 
+const scale = () => ZOOM_LEVELS[zoomIndex];
+
+// Mantiene la imagen dentro de la pantalla: se puede recorrer de orilla a orilla, sin espacios vacíos
+function clamp() {
+  const s = scale();
+  const maxX = Math.max(0, (lbImg.offsetWidth * s - lbStage.clientWidth) / 2);
+  const maxY = Math.max(0, (lbImg.offsetHeight * s - lbStage.clientHeight) / 2);
+  tx = Math.min(maxX, Math.max(-maxX, tx));
+  ty = Math.min(maxY, Math.max(-maxY, ty));
+}
+function render() {
+  clamp();
+  lbImg.style.transform = `translate(${tx}px, ${ty}px) scale(${scale()})`;
+  lightbox.classList.toggle("is-zoomed", zoomIndex > 0);
+  lightbox.classList.toggle("is-max", zoomIndex === ZOOM_LEVELS.length - 1);
+}
+
 function openLightbox(src) {
   lbImg.src = src;
-  lightbox.classList.remove("is-zoomed");
+  zoomIndex = 0; tx = 0; ty = 0;
+  render();
   lightbox.classList.add("is-open");
 }
 function closeLightbox() {
-  lightbox.classList.remove("is-open", "is-zoomed");
+  lightbox.classList.remove("is-open", "is-zoomed", "is-max", "is-dragging");
 }
 
 // Clic en una imagen de la galería: abre el visor
@@ -172,44 +196,49 @@ modalContent.addEventListener("click", (e) => {
   if (img) openLightbox(img.src);
 });
 
-// Clic en la imagen del visor: acerca / aleja en el punto donde diste clic
+// Clic en la imagen: 1er clic = intermedio, 2do = máximo, 3er = vuelve a la imagen completa
 lbImg.addEventListener("click", (e) => {
   if (moved) return;
-  const r = lbImg.getBoundingClientRect();
-  const fx = (e.clientX - r.left) / r.width;
-  const fy = (e.clientY - r.top) / r.height;
-  const zoomed = lightbox.classList.toggle("is-zoomed");
-  if (zoomed) {
-    requestAnimationFrame(() => {
-      lbStage.scrollLeft = fx * lbImg.offsetWidth - lbStage.clientWidth / 2;
-      lbStage.scrollTop = fy * lbImg.offsetHeight - lbStage.clientHeight / 2;
-    });
+  const r = lbStage.getBoundingClientRect();
+  const cx = e.clientX - (r.left + r.width / 2);   // posición del clic respecto al centro
+  const cy = e.clientY - (r.top + r.height / 2);
+  const oldS = scale();
+  zoomIndex = (zoomIndex + 1) % ZOOM_LEVELS.length;
+  const newS = scale();
+  if (zoomIndex === 0) { tx = 0; ty = 0; }
+  else {
+    // acerca justo en el punto donde diste clic
+    tx = cx - ((cx - tx) / oldS) * newS;
+    ty = cy - ((cy - ty) / oldS) * newS;
   }
+  render();
 });
 
-// Arrastrar con el mouse para moverse cuando está acercada
-lbStage.addEventListener("mousedown", (e) => {
-  if (!lightbox.classList.contains("is-zoomed")) return;
-  e.preventDefault();
-  drag = { x: e.clientX, y: e.clientY, left: lbStage.scrollLeft, top: lbStage.scrollTop };
+// Arrastrar (mouse o dedo) para recorrer la imagen acercada
+lbImg.addEventListener("pointerdown", (e) => {
+  if (zoomIndex === 0) return;
+  drag = { x: e.clientX, y: e.clientY, tx, ty };
   moved = false;
-  lightbox.classList.add("is-dragging");
+  lbImg.setPointerCapture(e.pointerId);
 });
-window.addEventListener("mousemove", (e) => {
+lbImg.addEventListener("pointermove", (e) => {
   if (!drag) return;
   const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
-  if (Math.abs(dx) + Math.abs(dy) > 5) moved = true;
-  lbStage.scrollLeft = drag.left - dx;
-  lbStage.scrollTop = drag.top - dy;
+  if (Math.abs(dx) + Math.abs(dy) > 5) { moved = true; lightbox.classList.add("is-dragging"); }
+  tx = drag.tx + dx; ty = drag.ty + dy;
+  render();
 });
-window.addEventListener("mouseup", () => {
+const endDrag = () => {
   if (!drag) return;
   drag = null;
   lightbox.classList.remove("is-dragging");
   setTimeout(() => { moved = false; }, 0);
-});
+};
+lbImg.addEventListener("pointerup", endDrag);
+lbImg.addEventListener("pointercancel", endDrag);
+window.addEventListener("resize", () => { if (lightbox.classList.contains("is-open")) render(); });
 
-// Cerrar el visor: botón X, clic en el fondo o tecla Esc
+// Cerrar el visor: botón X, clic en el fondo o tecla Esc (regresa a la ventana del proyecto)
 lightbox.querySelector(".lightbox__close").addEventListener("click", closeLightbox);
 lbStage.addEventListener("click", (e) => { if (e.target === lbStage && !moved) closeLightbox(); });
 modal.addEventListener("cancel", (e) => {
