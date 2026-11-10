@@ -94,7 +94,8 @@ function openProject(id) {
   if (p.media) {
     // Orden libre: "assets/img/x.jpg" = imagen, { yt: "ID" } = YouTube horizontal,
     // { short: "ID" } = YouTube vertical (Shorts), { sketchfab: "UID" } = visor 3D,
-    // { label: {en, es} } = subtítulo, { grid: ["a.jpg", ...] } = cuadrícula de imágenes
+    // { label: {en, es} } = subtítulo, { grid: ["a.jpg", ...] } = cuadrícula de imágenes,
+    // { site: { url, desktop, mobile, cut } } = sitio web en marcos de computadora y celular
     const shortHTML = (v) => `
       <div class="modal__short">
         <iframe src="https://www.youtube-nocookie.com/embed/${v}" title="${p.title}" loading="lazy"
@@ -110,6 +111,20 @@ function openProject(id) {
       if (m && m.short) { shortsRow.push(shortHTML(m.short)); return; } // Shorts seguidos van lado a lado
       flushShorts();
       if (m && m.label) { parts.push(`<h3 class="modal__label">${bi(m.label)}</h3>`); return; }        // subtítulo
+      if (m && m.site) {                                                                             // sitio web en marcos de computadora y celular
+        const st = m.site;
+        const more = st.cut ? `<div class="mock__more">${bi({ en: "Continues on the website", es: "Continúa en el sitio" })} &darr;</div>` : "";
+        parts.push(`
+          <div class="site">
+            <div class="mock mock--desktop">
+              <div class="mock__bar"><span class="mock__dots"><i></i><i></i><i></i></span><span class="mock__url">${st.url}</span></div>
+              <div class="mock__screen"><img src="${st.desktop}" alt="${st.url}" loading="lazy"></div>
+            </div>
+            ${st.mobile ? `<div class="mock mock--phone"><div class="mock__screen"><img src="${st.mobile}" alt="${st.url}" loading="lazy">${more}</div></div>` : ""}
+          </div>
+          <p class="site__hint">${bi({ en: "Scroll inside the screens to explore the site", es: "Desplázate dentro de las pantallas para recorrer el sitio" })}</p>`);
+        return;
+      }
       if (m && m.grid) { parts.push(`<div class="modal__grid">${m.grid.map(imgHTML).join("")}</div>`); return; } // cuadrícula
       parts.push(typeof m === "string" ? imgHTML(m) : m.yt ? ytHTML(m.yt) : m.sketchfab ? sketchfabHTML(m.sketchfab) : "");
     });
@@ -195,7 +210,7 @@ function closeLightbox() {
 
 // Clic en una imagen de la galería: abre el visor
 modalContent.addEventListener("click", (e) => {
-  const img = e.target.closest(".modal__media img");
+  const img = e.target.closest(".modal__media img:not(.mock img)");  // las capturas de sitios web no abren el zoom
   if (img) openLightbox(img.src);
 });
 
