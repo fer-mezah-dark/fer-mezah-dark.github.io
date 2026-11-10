@@ -23,12 +23,21 @@ const PROJECTS = [
     role: { en: "Graphic Designer · Design Coordination", es: "Diseñador Gráfico · Coordinación de Diseño" },
     tools: "WordPress · Elementor · HTML / CSS / JS · Photoshop · Illustrator · Canva",
     desc: {
-      en: "I led the design area of an HR consulting firm: two websites built in WordPress / Elementor with custom-coded widgets (HRI and its brand MIMO-MAT), landing pages, around 12 LinkedIn posts per month, event invitations, campaigns for its partner SK Track (Lark) and the institutional brochure. In total: 2 websites, 2 landing pages and ~48 posts in 4 months.",
-      es: "Llevé el área de diseño de una consultora de Recursos Humanos: dos sitios web en WordPress / Elementor con widgets de código propio (HRI y su marca MIMO-MAT), landing pages, alrededor de 12 publicaciones de LinkedIn al mes, invitaciones a eventos, campañas para su socio SK Track (Lark) y el folleto institucional. En total: 2 sitios web, 2 landings y ~48 publicaciones en 4 meses."
+      en: "I led the design area of an HR consulting firm: two websites designed and built in WordPress / Elementor with custom-coded widgets (HRI and its brand MIMO-MAT), around 12 LinkedIn posts per month, event invitations, campaigns for its partner SK Track (Lark) and the institutional brochure. In total: 2 websites and ~48 posts in 4 months.",
+      es: "Llevé el área de diseño de una consultora de Recursos Humanos: dos sitios web diseñados y construidos en WordPress / Elementor con widgets de código propio (HRI y su marca MIMO-MAT), alrededor de 12 publicaciones de LinkedIn al mes, invitaciones a eventos, campañas para su socio SK Track (Lark) y el folleto institucional. En total: 2 sitios web y ~48 publicaciones en 4 meses."
     },
     cover: "assets/img/hri-cover.jpg",
-    // Orden de la galería: imágenes, videos (yt / short), subtítulos (label), cuadrículas (grid) y visor 3D (sketchfab)
+    // Orden de la galería: imágenes, videos (yt / short), subtítulos (label), cuadrículas (grid),
+    // sitios web (site) y visor 3D (sketchfab)
     media: [
+      { label: { en: "Website · HRIntelligence", es: "Sitio web · HRIntelligence" } },
+      { site: { url: "hrimx.mx", desktop: "assets/img/web-hri-desktop.jpg", mobile: "assets/img/web-hri-mobile.jpg" } },
+      { yt: "GNRdpL_B7FE" },
+      { label: { en: "HRIntelligence · About us page", es: "HRIntelligence · Página Nosotros" } },
+      { site: { url: "hrimx.mx · Nosotros", desktop: "assets/img/web-hri-nosotros-desktop.jpg", mobile: "assets/img/web-hri-nosotros-mobile.jpg" } },
+      { label: { en: "Website · MIMO-MAT", es: "Sitio web · MIMO-MAT" } },
+      { site: { url: "mimomat.com.mx", desktop: "assets/img/web-mimomat-desktop.jpg", mobile: "assets/img/web-mimomat-mobile.jpg", cut: true } },
+      { yt: "5Mo__EttW6U" },
       { label: { en: "LinkedIn posts", es: "Publicaciones de LinkedIn" } },
       { grid: [
         "assets/img/hri-li-01.jpg", "assets/img/hri-li-02.jpg", "assets/img/hri-li-03.jpg",
@@ -52,9 +61,11 @@ const PROJECTS = [
     images: [], videos: [],
     links: [
       { en: "HRI website", es: "Sitio de HRI", url: "https://hrimx.mx/" },
-      { en: "MIMO-MAT website", es: "Sitio de MIMO-MAT", url: "https://mimomat.com.mx/" }
+      { en: "MIMO-MAT website", es: "Sitio de MIMO-MAT", url: "https://mimomat.com.mx/" },
+      { en: "HRI · archived version (2026)", es: "HRI · versión archivada (2026)", url: "https://web.archive.org/web/20261110065508/https://hrimx.mx/" },
+      { en: "MIMO-MAT · archived version (2026)", es: "MIMO-MAT · versión archivada (2026)", url: "https://web.archive.org/web/20261110065635/https://mimomat.com.mx/" }
     ],
-    note: { en: "Design delivered in 2026. The live sites may have changed since then.", es: "Diseño entregado en 2026. Los sitios en vivo pueden haber cambiado desde entonces." }
+    note: { en: "Design delivered in 2026. The live sites may have changed since then; the archived versions show them as I delivered them.", es: "Diseño entregado en 2026. Los sitios en vivo pueden haber cambiado desde entonces; las versiones archivadas los muestran tal como los entregué." }
   },
   {
     id: "hibe",
