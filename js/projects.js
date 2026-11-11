@@ -166,7 +166,7 @@ const PROJECTS = [
     id: "singer",
     featured: true,
     cats: ["3d"],
-    year: "2022",
+    year: "2020",
     title: "Singer 29-4",
     role: { en: "3D Artist", es: "Artista 3D" },
     tools: "Maya · Substance Painter",
@@ -312,28 +312,68 @@ const PROJECTS = [
   // ===================== MÁS PROYECTOS =====================
   // --- 3D y animación ---
   {
-    id: "blaster", cats: ["3d"], year: "", title: "DL-44 Blaster",
+    id: "blaster", cats: ["3d"], year: "2020", title: "DL-44 Blaster",
     role: { en: "3D Artist", es: "Artista 3D" }, tools: "Maya · Substance Painter",
-    desc: { en: "Realistic hard-surface model of a sci-fi prop, with a turntable video.", es: "Modelo hard-surface realista de un prop de ciencia ficción, con video de exhibición." },
-    cover: "", images: [], videos: [], links: []
+    desc: {
+      en: "Detailed 3D recreation of the DL-44 blaster pistol: hard-surface modeling, PBR texturing and lighting for realistic renders, presented in a turntable video.",
+      es: "Recreación 3D detallada de la pistola bláster DL-44: modelado hard-surface, texturizado PBR e iluminación para renders realistas, presentada en un video turntable."
+    },
+    cover: "assets/img/blaster-cover.jpg",
+    media: [
+      { yt: "6P3p9_vNHTw" },
+      "assets/img/blaster-01.jpg",
+      "assets/img/blaster-02.jpg",
+      "assets/img/blaster-03.jpg"
+    ],
+    images: [], videos: [], links: [],
+    note: { en: "Fan recreation of a prop from the Star Wars saga, made for study purposes.", es: "Recreación de fan de un objeto de la saga Star Wars, hecha con fines de estudio." }
   },
   {
-    id: "fearful", cats: ["3d"], year: "", title: "Fearful Tales",
+    id: "fearful", cats: ["3d"], year: "2020", title: "Fearful Tales: Hansel and Gretel",
     role: { en: "3D Artist", es: "Artista 3D" }, tools: "Maya · Substance Painter",
-    desc: { en: "3D recreation of a concept art piece, focused on modeling and lighting.", es: "Recreación en 3D de un concept art, enfocada en modelado e iluminación." },
-    cover: "", images: [], videos: [], links: []
+    desc: {
+      en: "A 3D recreation of a concept art piece from the video game Fearful Tales: Hansel and Gretel, faithfully rebuilding its dark, fairy-tale kitchen through modeling, texturing and lighting.",
+      es: "Recreación 3D de un concept art del videojuego Fearful Tales: Hansel and Gretel, reconstruyendo con fidelidad su cocina sombría de cuento de hadas mediante modelado, texturizado e iluminación."
+    },
+    cover: "assets/img/fearful-cover.jpg",
+    media: [
+      { label: { en: "Original concept art (reference)", es: "Concept art original (referencia)" } },
+      "assets/img/fearful-01.jpg",
+      { label: { en: "My 3D recreation", es: "Mi recreación 3D" } },
+      "assets/img/fearful-02.jpg"
+    ],
+    images: [], videos: [], links: [],
+    note: { en: "Original concept art and Fearful Tales brand: Eipix Entertainment. The 3D recreation is my own work.", es: "Concept art original y marca Fearful Tales: Eipix Entertainment. La recreación 3D es de mi autoría." }
   },
   {
     id: "naturalbalance", cats: ["3d", "video"], year: "2022", title: "Natural Balance",
-    role: { en: "Freelance Animator", es: "Animador Freelance" }, tools: "Unity · After Effects",
-    desc: { en: "Animated promotional video for the brand's product catalog.", es: "Video promocional animado del catálogo de productos de la marca." },
-    cover: "", images: [], videos: [], links: []
+    role: { en: "Freelance Animator · Editor", es: "Animador y editor freelance" }, tools: "Unity · Premiere",
+    desc: {
+      en: "Promotional video for the insole brand Natural Balance, edited in Adobe Premiere with motion graphics created in Unity, delivered in 1080p.",
+      es: "Video promocional para la marca de plantillas Natural Balance, editado en Adobe Premiere con motion graphics creados en Unity, entregado en 1080p."
+    },
+    cover: "assets/img/naturalbalance-cover.jpg",
+    media: [
+      { yt: "YVkyningC9w" },
+      "assets/img/naturalbalance-01.jpg",
+      "assets/img/naturalbalance-02.jpg"
+    ],
+    images: [], videos: [], links: []
   },
   {
     id: "cescijuc", cats: ["3d", "video"], year: "2022", title: "CESCIJUC",
-    role: { en: "Freelance Animator", es: "Animador Freelance" }, tools: "Maya · Premiere",
-    desc: { en: "Christmas promotional video in 3D animation.", es: "Promocional navideño en animación 3D." },
-    cover: "", images: [], videos: [], links: []
+    role: { en: "Freelance Animator · Editor", es: "Animador y editor freelance" }, tools: "Unity · Premiere",
+    desc: {
+      en: "Christmas promotional video for CESCIJUC, a higher-education institute: a 3D cabin scene with motion graphics created in Unity, edited in Adobe Premiere and delivered in 1080p.",
+      es: "Video promocional navideño para CESCIJUC, instituto de estudios superiores: una escena 3D de cabaña con motion graphics creados en Unity, editada en Adobe Premiere y entregada en 1080p."
+    },
+    cover: "assets/img/cescijuc-cover.jpg",
+    media: [
+      { yt: "p0FastrylUM" },
+      "assets/img/cescijuc-01.jpg",
+      "assets/img/cescijuc-02.jpg"
+    ],
+    images: [], videos: [], links: []
   },
 
   // --- Videojuegos y prototipos ---
