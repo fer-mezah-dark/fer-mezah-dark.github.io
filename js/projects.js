@@ -380,52 +380,126 @@ const PROJECTS = [
   {
     id: "rhythmic", cats: ["games", "uiux"], year: "2021", title: "Rhythmic DJ",
     role: { en: "Lead Artist · Art & VFX", es: "Artista principal · Arte y VFX" }, tools: "Unity · Photoshop",
-    desc: { en: "Rhythm game made in a SAE game jam. I created the art, visual effects and interface.", es: "Juego de ritmo creado en una game jam de SAE. Hice el arte, los efectos visuales y la interfaz." },
-    cover: "", images: [], videos: [], links: [],
+    desc: {
+      en: "Rhythm game created by Negative Neon Studios in a SAE Institute México game jam. I created the art, visual effects and neon interface: animated main menu, How to Play screen, pause and Level Clear screens.",
+      es: "Juego de ritmo creado por Negative Neon Studios en una game jam de SAE Institute México. Hice el arte, los efectos visuales y la interfaz neón: menú principal animado, pantalla de instrucciones, pausa y Level Clear."
+    },
+    cover: "assets/img/rhythmic-cover.jpg",
+    media: [
+      { yt: "UYVU1LYD_aU" },
+      "assets/img/rhythmic-01.jpg",
+      "assets/img/rhythmic-02.jpg",
+      "assets/img/rhythmic-03.jpg"
+    ],
+    images: [], videos: [],
+    links: [ { en: "Download on Game Jolt", es: "Descargar en Game Jolt", url: "https://gamejolt.com/games/RhythmicDJ/619406" } ],
     note: { en: "Game design & programming: César Arnaldo Sánchez Hurtado.", es: "Diseño de juego y programación: César Arnaldo Sánchez Hurtado." }
   },
   {
-    id: "deeperwords", cats: ["games", "uiux"], year: "", title: "Deeper Words",
-    role: { en: "Game Designer · Developer", es: "Diseñador y desarrollador del juego" }, tools: "Unity",
-    desc: { en: "Educational game for learning English, from design to development.", es: "Videojuego educativo para aprender inglés, del diseño al desarrollo." },
-    cover: "", images: [], videos: [], links: [],
-    note: { en: "Music & sound: Oscar Xavier Escobedo.", es: "Música y sonido: Oscar Xavier Escobedo." }
+    id: "deeperwords", cats: ["games", "uiux"], year: "2021", title: "Deeper Words",
+    role: { en: "Game Designer · Developer", es: "Diseñador y desarrollador del juego" }, tools: "Unity · Photoshop",
+    desc: {
+      en: "Educational game that teaches English grammar through a race against time. I designed and developed it from the initial idea to the final version, including its glowing underwater visual style and interface.",
+      es: "Videojuego educativo que enseña gramática del inglés a través de un reto contra el tiempo. Lo diseñé y desarrollé desde la idea inicial hasta la versión final, incluyendo su estilo visual submarino luminoso y su interfaz."
+    },
+    cover: "assets/img/deeperwords-cover.jpg",
+    media: [
+      { yt: "_oS4nSDm38o" },
+      "assets/img/deeperwords-01.jpg",
+      "assets/img/deeperwords-02.jpg",
+      "assets/img/deeperwords-03.jpg",
+      "assets/img/deeperwords-04.jpg"
+    ],
+    images: [], videos: [],
+    links: [ { en: "Download on Game Jolt", es: "Descargar en Game Jolt", url: "https://gamejolt.com/games/deeper_words/651348" } ],
+    note: { en: "Music & sound: Oscar Xavier Escobedo. Grammar exercises by both of us.", es: "Música y sonido: Oscar Xavier Escobedo. Ejercicios de gramática de ambos." }
   },
   {
-    id: "junkiedrag", cats: ["games", "uiux", "3d"], year: "", title: "Junkie Drag",
-    role: { en: "UI Designer · 3D Artist", es: "Diseñador UI · Artista 3D" }, tools: "Unity · Photoshop · Maya",
-    desc: { en: "Game interface design: battle screen, menus and state hierarchy, plus 3D characters.", es: "Diseño de interfaz de videojuego: pantalla de batalla, menús y jerarquía de estados, además de personajes 3D." },
-    cover: "", images: [], videos: [], links: []
+    id: "junkiedrag", cats: ["games", "uiux", "3d"], year: "2020", title: "Junkie Drag",
+    role: { en: "UI/UX Designer · 3D Artist", es: "Diseñador UI/UX · Artista 3D" }, tools: "Unity · Photoshop · Maya",
+    desc: {
+      en: "Turn-based battle game. I designed its user interface (battle screen, menus, map and state hierarchy) with a bold neon style, and modeled the 3D characters.",
+      es: "Juego de batallas por turnos. Diseñé su interfaz de usuario (pantalla de batalla, menús, mapa y jerarquía de estados) con un estilo neón llamativo, y modelé los personajes 3D."
+    },
+    cover: "assets/img/junkiedrag-cover.jpg",
+    media: [
+      "assets/img/junkiedrag-01.jpg",
+      "assets/img/junkiedrag-02.jpg",
+      "assets/img/junkiedrag-03.jpg"
+    ],
+    images: [], videos: [], links: []
   },
   {
-    id: "babylon", cats: ["games", "graphic"], year: "", title: "Rise of Babylon",
+    id: "babylon", cats: ["games", "graphic"], year: "2019", title: "Rise of Babylon",
     role: { en: "Pixel Artist (collaboration)", es: "Artista pixel art (colaboración)" }, tools: "Photoshop",
-    desc: { en: "Pixel art scenes for an action-adventure visual novel set in ancient Babylon.", es: "Escenas en pixel art para una novela visual de acción y aventura ambientada en la antigua Babilonia." },
-    cover: "", images: [], videos: [], links: []
+    desc: {
+      en: "Pixel art scenes for an action-adventure visual novel set in ancient Babylon, blending retro aesthetics with an epic narrative.",
+      es: "Escenas en pixel art para una novela visual de acción y aventura ambientada en la antigua Babilonia, que fusionan estética retro con una narrativa épica."
+    },
+    cover: "assets/img/babylon-cover.jpg",
+    media: [
+      "assets/img/babylon-01.jpg",
+      "assets/img/babylon-02.jpg",
+      "assets/img/babylon-03.jpg",
+      "assets/img/babylon-04.jpg",
+      "assets/img/babylon-05.jpg",
+      "assets/img/babylon-06.jpg"
+    ],
+    images: [], videos: [], links: []
   },
   {
-    id: "saebrawl", cats: ["games", "graphic", "video"], year: "", title: "SAE Brawl",
-    role: { en: "Art Direction · Advertising", es: "Dirección de arte · Publicidad" }, tools: "Photoshop · Premiere",
-    desc: { en: "Fighting game with rotoscoped characters: visual style, fight scenarios, green screen backgrounds and the tournament campaign.", es: "Juego de pelea con personajes en rotoscopia: estilo visual, escenarios de pelea, fondos de chroma y la campaña del torneo." },
-    cover: "", images: [], videos: [], links: []
+    id: "saebrawl", cats: ["games", "graphic", "video"], year: "2019", title: "SAE Brawl",
+    role: { en: "Art Direction · Advertising (team project)", es: "Dirección de arte · Publicidad (proyecto en equipo)" }, tools: "Photoshop · Premiere · Unity",
+    desc: {
+      en: "Fighting game inspired by the 1992 Mortal Kombat, with characters created from real photographs (rotoscoping). I worked on the visual style, the green screen shoots, the battle stages and led the tournament advertising campaign.",
+      es: "Juego de peleas inspirado en el Mortal Kombat de 1992, con personajes creados a partir de fotografías reales (rotoscopia). Trabajé en el estilo visual, las sesiones con pantalla verde, los escenarios de batalla y lideré la campaña publicitaria del torneo."
+    },
+    cover: "assets/img/saebrawl-cover.jpg",
+    media: [
+      "assets/img/saebrawl-01.jpg",
+      "assets/img/saebrawl-02.jpg",
+      { label: { en: "Characters · from photo to animation", es: "Personajes · de la foto a la animación" } },
+      "assets/img/saebrawl-04.jpg",
+      { yt: "kRB4vtL7RNM" },
+      { yt: "OCp6N2JLak0" },
+      { label: { en: "Battle stages", es: "Escenarios de batalla" } },
+      "assets/img/saebrawl-03.jpg",
+      { yt: "3DEdLQRoNOQ" }
+    ],
+    images: [], videos: [], links: []
   },
   {
-    id: "lumina", cats: ["games", "3d"], year: "", title: "Lumina",
+    id: "lumina", cats: ["games", "3d"], year: "2020", title: "Lumina",
     role: { en: "Lighting Artist", es: "Artista de iluminación" }, tools: "Unity",
-    desc: { en: "Interior lighting study in Unity.", es: "Estudio de iluminación de interiores en Unity." },
-    cover: "", images: [], videos: [], links: []
+    desc: {
+      en: "Lighting study of an interior environment in Unity: I documented the implementation and experimented with different techniques to create attractive, realistic atmospheres.",
+      es: "Estudio de iluminación de un interior en Unity: documenté la implementación y experimenté con distintas técnicas para crear ambientes atractivos y realistas."
+    },
+    cover: "assets/img/lumina-cover.jpg",
+    media: [ { yt: "clubeQBQmXU" }, "assets/img/lumina-01.jpg" ],
+    images: [], videos: [], links: []
   },
   {
-    id: "mentalshock", cats: ["games"], year: "", title: "Mental Shock",
+    id: "mentalshock", cats: ["games"], year: "2020", title: "Mental Shock",
     role: { en: "Level Designer", es: "Diseñador de niveles" }, tools: "Unity",
-    desc: { en: "Prototype of a semi-open level, with its design documentation.", es: "Prototipo de un nivel semiabierto, con su documentación de diseño." },
-    cover: "", images: [], videos: [], links: []
+    desc: {
+      en: "Prototype of a semi-open level with quests and themes inspired by World of Warcraft, with its design documentation.",
+      es: "Prototipo de un nivel semiabierto con misiones y temáticas inspiradas en World of Warcraft, con su documentación de diseño."
+    },
+    cover: "assets/img/mentalshock-cover.jpg",
+    media: [ { yt: "eQyPRadMk4A" }, "assets/img/mentalshock-01.jpg" ],
+    images: [], videos: [], links: []
   },
   {
-    id: "whiteout", cats: ["games"], year: "", title: "Whiteout_F",
+    id: "whiteout", cats: ["games"], year: "2020", title: "Whiteout_F",
     role: { en: "Level & Mechanics Designer", es: "Diseñador de nivel y mecánicas" }, tools: "Unity",
-    desc: { en: "3D platforming prototype built on a base character controller; I designed the level and its mechanics.", es: "Prototipo de plataformas 3D construido sobre un controlador de personaje base; diseñé el nivel y sus mecánicas." },
-    cover: "", images: [], videos: [], links: []
+    desc: {
+      en: "3D platforming level prototype built on a base character controller: I designed the level, its platforming movements and character interactions.",
+      es: "Prototipo de nivel de plataformas 3D construido sobre un controlador de personaje base: diseñé el nivel, sus movimientos de plataforma y las interacciones del personaje."
+    },
+    cover: "assets/img/whiteout-cover.jpg",
+    media: [ { yt: "YSTGd1RN24Q" }, "assets/img/whiteout-01.jpg" ],
+    images: [], videos: [], links: []
   },
 
   // --- Video, cine y audio ---
