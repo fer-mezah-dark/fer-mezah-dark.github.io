@@ -18,6 +18,18 @@ const updateNav = () => nav.classList.toggle("is-scrolled", window.scrollY > 40)
 window.addEventListener("scroll", updateNav, { passive: true });
 updateNav();
 
+// ===== FOTO DE PERFIL: dibujo ↔ foto real =====
+const aboutPhoto = document.querySelector(".about__photo");
+const photoBtns = document.querySelectorAll(".photo-toggle [data-view]");
+function setPhotoView(view) {
+  aboutPhoto.classList.toggle("is-photo", view === "photo");
+  photoBtns.forEach((b) => b.classList.toggle("is-active", b.dataset.view === view));
+}
+if (aboutPhoto) {
+  aboutPhoto.addEventListener("click", () => setPhotoView(aboutPhoto.classList.contains("is-photo") ? "draw" : "photo"));
+  photoBtns.forEach((b) => b.addEventListener("click", () => setPhotoView(b.dataset.view)));
+}
+
 // ===== PROYECTOS: tarjetas, filtro y ventana de detalle =====
 const CAT_NAMES = {
   "3d":    { en: "3D", es: "3D" },
