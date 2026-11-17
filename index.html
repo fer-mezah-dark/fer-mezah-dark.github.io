@@ -77,10 +77,17 @@
 
       <div class="about">
         <!-- Foto: la cambiamos por la real en el paso de imágenes -->
-        <div class="about__photo reveal">
-          <span class="placeholder">
-            <span lang="en">Photo</span><span lang="es">Foto</span>
-          </span>
+        <!-- Foto: dibujo digital por defecto; al pasar el mouse, tocar o usar el interruptor cambia a la foto real -->
+        <div class="about__photo-wrap reveal">
+          <button class="about__photo" type="button" aria-label="Fernando Meza">
+            <img class="about__img about__img--draw" src="assets/img/perfil-dibujo.jpg" alt="Fernando Meza (illustration)">
+            <img class="about__img about__img--photo" src="assets/img/perfil-foto.jpg" alt="Fernando Meza (photo)">
+          </button>
+          <div class="photo-toggle" role="group">
+            <button type="button" data-view="draw" class="is-active"><span lang="en">Drawing</span><span lang="es">Dibujo</span></button>
+            <span class="photo-toggle__sep">|</span>
+            <button type="button" data-view="photo"><span lang="en">Photo</span><span lang="es">Foto</span></button>
+          </div>
         </div>
 
         <div class="about__text">
