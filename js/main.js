@@ -288,6 +288,9 @@ let animationsStarted = false;
 window.startAnimations = function () {
   if (animationsStarted || !window.gsap || !window.ScrollTrigger) return;
   animationsStarted = true;
+  // Se quita el ocultamiento ANTES de crear las animaciones: GSAP toma como estado final
+  // la opacidad real de cada elemento, y si siguiera oculto se quedaría en 0 (pantalla negra)
+  document.documentElement.classList.remove("anim-pending");
   gsap.registerPlugin(ScrollTrigger);
 
   // Entrada del hero: el logo se dibuja, se rellena y luego aparece el texto
@@ -315,8 +318,5 @@ window.startAnimations = function () {
       scrollTrigger: { trigger: el, start: "top 85%" }
     });
   });
-
-  // Ya con todo preparado, se muestra la página y empiezan las animaciones
-  document.documentElement.classList.remove("anim-pending");
 };
 startAnimations(); // por si GSAP ya estaba cargado
