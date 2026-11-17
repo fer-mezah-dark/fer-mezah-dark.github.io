@@ -651,9 +651,42 @@ const PROJECTS = [
     note: { en: "Logo for a fan community, inspired by Halo.", es: "Logo para una comunidad de fans, inspirado en Halo." }
   },
   {
-    id: "personal", cats: ["graphic", "3d"], year: "", title: "Personal work",
-    role: { en: "Illustrator · 3D Artist", es: "Ilustrador · Artista 3D" }, tools: "Photoshop · Maya",
-    desc: { en: "Illustrations and 3D models made on my own initiative.", es: "Ilustraciones y modelos 3D hechos por iniciativa propia." },
-    cover: "", images: [], videos: [], links: []
+    id: "personal", cats: ["3d", "graphic"], year: "2022–2026", title: "Personal work",
+    role: { en: "Illustrator · 3D Artist", es: "Ilustrador · Artista 3D" }, tools: "Photoshop · Illustrator · ZBrush · Maya · Unity · Canva",
+    desc: {
+      en: "Work made on my own initiative: a 3D bust of Cernunnos in a night forest scene, a creature redesign for the Espectro prototype, and characters and monsters I design for the tabletop role-playing campaigns I play with friends (Delta Green, Cloud Empress, Dungeons & Dragons, They Feed on Fear), drawn by hand and digitally.",
+      es: "Trabajos hechos por iniciativa propia: un busto 3D de Cernunnos en una escena de bosque nocturno, un rediseño de criaturas para el prototipo de Espectro, y personajes y monstruos que diseño para las campañas de rol que juego con amigos (Delta Green, Cloud Empress, Dungeons & Dragons, They Feed on Fear), dibujados a mano y en digital."
+    },
+    cover: "assets/img/personal-cover.jpg",
+    media: [
+      { label: { en: "3D · Cernunnos (2022)", es: "3D · Cernunnos (2022)" } },
+      "assets/img/personal-3d-01.jpg",
+      "assets/img/personal-3d-02.jpg",
+      "assets/img/personal-3d-03.jpg",
+      { label: { en: "3D · The night forest of the Cernunnos scene (Unity)", es: "3D · El bosque nocturno de la escena de Cernunnos (Unity)" } },
+      "assets/img/personal-3d-05.jpg",
+      "assets/img/personal-3d-04.jpg",
+      "assets/img/personal-3d-06.jpg",
+      { label: { en: "3D · Creature redesign for Espectro (ZBrush, 2022)", es: "3D · Rediseño de criaturas para Espectro (ZBrush, 2022)" } },
+      { grid: [
+        "assets/img/personal-zb-01.jpg", "assets/img/personal-zb-02.jpg", "assets/img/personal-zb-03.jpg",
+        "assets/img/personal-zb-04.jpg", "assets/img/personal-zb-05.jpg", "assets/img/personal-zb-06.jpg",
+        "assets/img/personal-zb-07.jpg", "assets/img/personal-zb-08.jpg", "assets/img/personal-zb-09.jpg"
+      ] },
+      { label: { en: "3D · Creature proposal for Espectro (Maya, 2022)", es: "3D · Propuesta de criatura para Espectro (Maya, 2022)" } },
+      { grid: [
+        "assets/img/personal-maya-01.jpg", "assets/img/personal-maya-02.jpg", "assets/img/personal-maya-03.jpg",
+        "assets/img/personal-maya-04.jpg", "assets/img/personal-maya-05.jpg", "assets/img/personal-maya-06.jpg"
+      ] },
+      { label: { en: "Digital illustration", es: "Ilustración digital" } },
+      { img: "assets/img/personal-ilus-02.jpg", caption: { en: "Soren and his snail Cascarita · character for a Cloud Empress campaign (2026)", es: "Soren y su caracol Cascarita · personaje para una campaña de Cloud Empress (2026)" } },
+      { img: "assets/img/personal-ilus-03.jpg", caption: { en: "Fer · my character for a Delta Green campaign (2026)", es: "Fer · mi personaje para una campaña de Delta Green (2026)" } },
+      { img: "assets/img/personal-ilus-01.jpg", caption: { en: "Elf · anime-style illustration (2023)", es: "Elfa · ilustración de estilo anime (2023)" } },
+      { label: { en: "Hand drawing", es: "Dibujo a mano" } },
+      { img: "assets/img/personal-dib-01.jpg", caption: { en: "Damian · secret agent for a Delta Green campaign (2026)", es: "Damian · agente secreto para una campaña de Delta Green (2026)" } },
+      { img: "assets/img/personal-dib-02.jpg", caption: { en: "Infernal magic toad · mutant monster for a Dungeons & Dragons campaign (2026)", es: "Sapo mágico infernal · monstruo mutante para una campaña de Dungeons & Dragons (2026)" } },
+      { img: "assets/img/personal-dib-03.jpg", caption: { en: "The Specter of the Dead Bulb · monster for They Feed on Fear (2026)", es: "El Espectro del Foco Muerto · monstruo para They Feed on Fear (2026)" } }
+    ],
+    images: [], videos: [], links: []
   }
 ];
