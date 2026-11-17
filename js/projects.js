@@ -588,33 +588,72 @@ const PROJECTS = [
   // --- Diseño gráfico y marca ---
   {
     id: "multibrand", cats: ["graphic", "video"], year: "2025", title: "Multi-brand car dealership",
-    role: { en: "Freelance Designer", es: "Diseñador Freelance" }, tools: "Photoshop · Premiere",
-    desc: { en: "Seasonal promotions and social media videos for a multi-brand car dealership.", es: "Promociones de temporada y videos para redes de una agencia automotriz multimarca." },
-    cover: "", images: [], videos: [], links: []
+    role: { en: "Freelance Designer", es: "Diseñador Freelance" }, tools: "Photoshop · Illustrator · Premiere",
+    desc: {
+      en: "Seasonal promotions and social media content for a multi-brand car dealership in Interlomas (Jeep, Dodge, Fiat, Peugeot, RAM, Nissan, Renault, Mitsubishi): service and aesthetics campaigns, vehicle offers and a promotional video for social media.",
+      es: "Promociones de temporada y contenido para redes de una agencia automotriz multimarca en Interlomas (Jeep, Dodge, Fiat, Peugeot, RAM, Nissan, Renault, Mitsubishi): campañas de servicio y estética, ofertas de vehículos y un video promocional para redes."
+    },
+    cover: "assets/img/multibrand-cover.jpg",
+    media: [
+      { label: { en: "Seasonal promotions", es: "Promociones de temporada" } },
+      { grid: [ "assets/img/multibrand-01.jpg", "assets/img/multibrand-02.jpg", "assets/img/multibrand-03.jpg", "assets/img/multibrand-04.jpg" ] },
+      { label: { en: "Promotional video · Jeep", es: "Video promocional · Jeep" } },
+      { short: "JEEP_VIDEO_ID" }
+    ],
+    images: [], videos: [], links: []
   },
   {
     id: "dinamic", cats: ["graphic"], year: "2023", title: "Dinamic Company",
     role: { en: "Freelance Designer", es: "Diseñador Freelance" }, tools: "Photoshop · Illustrator",
-    desc: { en: "Social media campaigns, internal templates, vector portrait illustration and survey data visualization.", es: "Campañas para redes, plantillas internas, ilustración vectorial de retrato y visualización de datos de encuestas." },
-    cover: "", images: [], videos: [], links: []
+    desc: {
+      en: "Design for a communication agency: internal templates aligned with the brand identity, a vector portrait illustration, survey data visualization and a social media campaign of more than 20 pieces with a consistent typographic and color system.",
+      es: "Diseño para una agencia de comunicación: plantillas internas alineadas con la identidad de marca, una ilustración vectorial de retrato, visualización de datos de encuestas y una campaña para redes de más de 20 piezas con un sistema tipográfico y de color consistente."
+    },
+    cover: "assets/img/dinamic-cover.jpg",
+    media: [
+      { label: { en: "Vector portrait illustration", es: "Ilustración vectorial de retrato" } },
+      "assets/img/dinamic-02.jpg",
+      { label: { en: "Survey data visualization", es: "Visualización de datos de encuestas" } },
+      "assets/img/dinamic-03.jpg",
+      { label: { en: "Internal templates", es: "Plantillas internas" } },
+      "assets/img/dinamic-01.jpg",
+      { label: { en: "Social media campaign", es: "Campaña para redes sociales" } },
+      "assets/img/dinamic-04.jpg",
+      "assets/img/dinamic-05.jpg",
+      "assets/img/dinamic-06.jpg",
+      "assets/img/dinamic-07.jpg",
+      "assets/img/dinamic-08.jpg"
+    ],
+    images: [], videos: [], links: []
   },
   {
-    id: "99designs", cats: ["graphic"], year: "", title: "Logo exploration · 99designs",
+    id: "99designs", cats: ["graphic"], year: "2023", title: "Logo exploration · 99designs",
     role: { en: "Logo Designer", es: "Diseñador de logotipos" }, tools: "Illustrator",
-    desc: { en: "Typographic exploration exercise with logo proposals for the 99designs platform.", es: "Ejercicio de exploración tipográfica con propuestas de logo para la plataforma 99designs." },
-    cover: "", images: [], videos: [], links: []
+    desc: {
+      en: "Typographic and logo exploration with more than 40 proposals for the 99designs platform: variations in lettering, symbols, color and composition.",
+      es: "Exploración tipográfica y de logotipo con más de 40 propuestas para la plataforma 99designs: variaciones de lettering, símbolos, color y composición."
+    },
+    cover: "assets/img/99designs-cover.jpg",
+    media: [ "assets/img/99designs-01.jpg", "assets/img/99designs-02.jpg", "assets/img/99designs-03.jpg", "assets/img/99designs-04.jpg" ],
+    images: [], videos: [], links: []
   },
   {
-    id: "ungamermas", cats: ["graphic"], year: "", title: "Un Gamer Más",
-    role: { en: "Logo & Identity", es: "Logo e identidad" }, tools: "Illustrator",
-    desc: { en: "Logo and visual identity for a video game review community on Facebook.", es: "Logo e identidad visual para una comunidad de reseñas de videojuegos en Facebook." },
-    cover: "", images: [], videos: [], links: [],
-    note: { en: "Fan community logo, inspired by Halo.", es: "Logo para una comunidad de fans, inspirado en Halo." }
+    id: "ungamermas", cats: ["graphic"], year: "2025", title: "Un Gamer Más",
+    role: { en: "Logo & Visual Identity", es: "Logo e identidad visual" }, tools: "Illustrator · Photoshop",
+    desc: {
+      en: "Logo and visual identity for \"Un Gamer Más\", a video game review community on Facebook: I created the main graphic concept and defined the brand's visual line.",
+      es: "Logo e identidad visual para \"Un Gamer Más\", una comunidad de reseñas de videojuegos en Facebook: creé el concepto gráfico principal y definí la línea visual de la marca."
+    },
+    cover: "assets/img/ungamermas-cover.jpg",
+    media: [ "assets/img/ungamermas-01.jpg" ],
+    images: [], videos: [],
+    links: [ { en: "Facebook page", es: "Página de Facebook", url: "https://www.facebook.com/profile.php?id=61573104117442" } ],
+    note: { en: "Logo for a fan community, inspired by Halo.", es: "Logo para una comunidad de fans, inspirado en Halo." }
   },
   {
-    id: "freelance", cats: ["graphic"], year: "", title: "Freelance compilation",
-    role: { en: "Designer · Illustrator", es: "Diseñador · Ilustrador" }, tools: "Photoshop · Illustrator",
-    desc: { en: "A selection of logos, illustrations and brand pieces for independent clients.", es: "Una selección de logos, ilustraciones y piezas de marca para clientes independientes." },
+    id: "personal", cats: ["graphic", "3d"], year: "", title: "Personal work",
+    role: { en: "Illustrator · 3D Artist", es: "Ilustrador · Artista 3D" }, tools: "Photoshop · Maya",
+    desc: { en: "Illustrations and 3D models made on my own initiative.", es: "Ilustraciones y modelos 3D hechos por iniciativa propia." },
     cover: "", images: [], videos: [], links: []
   }
 ];
