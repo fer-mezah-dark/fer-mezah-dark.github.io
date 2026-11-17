@@ -247,7 +247,7 @@ const PROJECTS = [
     id: "peo",
     featured: true,
     cats: ["graphic", "video"],
-    year: "2025",
+    year: "2026",
     title: "PEO · Punta del Este Operadora",
     role: { en: "Freelance Designer", es: "Diseñador Freelance" },
     tools: "Photoshop · Illustrator · Premiere · Canva",
@@ -504,40 +504,85 @@ const PROJECTS = [
 
   // --- Video, cine y audio ---
   {
-    id: "twilight", cats: ["video"], year: "", title: "This Twilight Garden",
-    role: { en: "Storyboard · Illustration", es: "Storyboard · Ilustración" }, tools: "Photoshop · Premiere",
-    desc: { en: "Animatic built from my own storyboard and illustrations.", es: "Animatic hecho a partir de mi storyboard e ilustraciones." },
-    cover: "", images: [], videos: [], links: []
+    id: "twilight", cats: ["video", "graphic"], year: "2020", title: "This Twilight Garden",
+    role: { en: "Storyboard Artist · Illustrator · Editor", es: "Storyboard · Ilustración · Edición" }, tools: "Photoshop · Premiere",
+    desc: {
+      en: "Animatic built from my own storyboard and sketch-style illustrations: a visual tribute to The Cure, with a style inspired by Kurt Cobain and elements of the DC universe, as an exercise in dynamic and emotional storytelling.",
+      es: "Animatic hecho a partir de mi propio storyboard e ilustraciones en estilo sketch: un tributo visual a The Cure, con un estilo inspirado en Kurt Cobain y elementos del universo DC, como ejercicio de narrativa dinámica y emocional."
+    },
+    cover: "assets/img/twilight-cover.jpg",
+    media: [ { yt: "8qwvjWLXwC4" }, "assets/img/twilight-01.jpg", "assets/img/twilight-02.jpg" ],
+    images: [], videos: [], links: [],
+    note: { en: "Song: \"This Twilight Garden\" by The Cure. Fan tribute made for study purposes.", es: "Canción: \"This Twilight Garden\" de The Cure. Tributo de fan hecho con fines de estudio." }
   },
   {
-    id: "beamracers", cats: ["video", "3d"], year: "", title: "Beam Racers",
-    role: { en: "Sets · Vehicles · Editing (team)", es: "Sets · Vehículos · Edición (en equipo)" }, tools: "Stop motion · Premiere",
-    desc: { en: "Stop motion short made as a team: I built sets and vehicles and edited the film.", es: "Cortometraje en stop motion hecho en equipo: construí sets y vehículos y edité el corto." },
-    cover: "", images: [], videos: [], links: []
+    id: "beamracers", cats: ["video", "3d"], year: "2019", title: "Beam Racers",
+    role: { en: "Sets · Vehicles · Animation · Editing (team project)", es: "Sets · Vehículos · Animación · Edición (proyecto en equipo)" }, tools: "Stop motion · Premiere",
+    desc: {
+      en: "Stop motion short set in a neon, futuristic and post-apocalyptic universe with a gamer approach: a car tournament that ends in an epic fight against a mutant monster. I helped build the vehicles and sets, shoot the frames and edit the film.",
+      es: "Cortometraje en stop motion ambientado en un universo neón, futurista y postapocalíptico con enfoque gamer: un torneo de autos que termina en una lucha épica contra un monstruo mutante. Participé en la creación de vehículos y escenografías, los fotogramas y la edición."
+    },
+    cover: "assets/img/beamracers-cover.jpg",
+    media: [
+      { yt: "762OpvDo-KQ" },
+      "assets/img/beamracers-01.jpg",
+      "assets/img/beamracers-02.jpg",
+      { label: { en: "Behind the scenes", es: "Detrás de cámaras" } },
+      "assets/img/beamracers-03.jpg"
+    ],
+    images: [], videos: [], links: []
   },
   {
-    id: "skyrim", cats: ["video"], year: "", title: "Skyrim Exploration",
-    role: { en: "Director · Editor", es: "Dirección · Edición" }, tools: "Premiere",
-    desc: { en: "Tribute short film captured in-game.", es: "Cortometraje tributo grabado dentro del juego." },
-    cover: "", images: [], videos: [], links: []
+    id: "skyrim", cats: ["video"], year: "2019", title: "Skyrim Exploration",
+    role: { en: "Director · Editor", es: "Dirección · Edición" }, tools: "Premiere · After Effects",
+    desc: {
+      en: "Live-action short film that recreates the experience of playing The Elder Scrolls V: Skyrim, mixing real footage with the game's interface to capture its exploration and epic spirit.",
+      es: "Cortometraje en acción real que recrea la experiencia de jugar The Elder Scrolls V: Skyrim, mezclando tomas reales con la interfaz del juego para capturar su exploración y su espíritu épico."
+    },
+    cover: "assets/img/skyrim-cover.jpg",
+    media: [ { yt: "vEXro9ml5Vg" }, "assets/img/skyrim-01.jpg" ],
+    images: [], videos: [], links: [],
+    note: { en: "Fan tribute. The Elder Scrolls V: Skyrim is a trademark of Bethesda Softworks.", es: "Tributo de fan. The Elder Scrolls V: Skyrim es marca de Bethesda Softworks." }
   },
   {
-    id: "auditory", cats: ["video", "games"], year: "", title: "Auditory Immersion",
+    id: "auditory", cats: ["video", "games"], year: "2020", title: "Auditory Immersion",
     role: { en: "Sound Designer", es: "Diseñador sonoro" }, tools: "Unity · Audition",
-    desc: { en: "Spatial sound design in 3D environments.", es: "Diseño de sonido espacial en entornos 3D." },
-    cover: "", images: [], videos: [], links: []
+    desc: {
+      en: "Exploration of spatial sound in 3D environments in Unity, analyzing how sound propagates in virtual spaces and how it interacts with the environment and the player.",
+      es: "Exploración de sonido espacial en entornos 3D en Unity, analizando cómo se propaga el sonido en espacios virtuales y cómo interactúa con el entorno y el jugador."
+    },
+    cover: "assets/img/auditory-cover.jpg",
+    media: [
+      { label: { en: "Walkthrough with commentary (Spanish)", es: "Recorrido con explicación" } },
+      { yt: "1-OfQ54Rj7M" },
+      { label: { en: "Sound only, no commentary", es: "Solo sonido, sin comentarios" } },
+      { yt: "QVAI7ZWYKXw" },
+      "assets/img/auditory-01.jpg"
+    ],
+    images: [], videos: [], links: []
   },
   {
-    id: "botbattle", cats: ["video"], year: "", title: "Mystical Cosmic Bot Battle",
-    role: { en: "Composer · Producer", es: "Compositor · Productor" }, tools: "Ableton · Audition",
-    desc: { en: "Original music composed and produced from a concept art piece.", es: "Música original compuesta y producida a partir de un concept art." },
-    cover: "", images: [], videos: [], links: []
+    id: "botbattle", cats: ["video", "graphic"], year: "2020", title: "Mystical Cosmic Bot Battle",
+    role: { en: "Composer · Producer · Illustrator", es: "Compositor · Productor · Ilustrador" }, tools: "Ableton · Audition · Photoshop",
+    desc: {
+      en: "My first musical composition for a video game concept: an original synthwave battle theme composed and produced in Ableton and Adobe Audition, inspired by a character I illustrated digitally in Photoshop.",
+      es: "Mi primera composición musical para un concepto de videojuego: un tema de batalla synthwave original, compuesto y producido en Ableton y Adobe Audition, inspirado en un personaje que ilustré digitalmente en Photoshop."
+    },
+    cover: "assets/img/botbattle-cover.jpg",
+    media: [ { yt: "sh74ORIsHxk" }, "assets/img/botbattle-01.jpg" ],
+    images: [], videos: [], links: []
   },
   {
-    id: "slo", cats: ["video"], year: "", title: "Slö",
-    role: { en: "Collaborator · Lead actor", es: "Colaborador · Protagonista" }, tools: "",
-    desc: { en: "A visual and sound journey that contrasts a grey routine with a dreamlike world connected to nature.", es: "Un viaje visual y sonoro que contrasta la rutina gris con un mundo onírico conectado con la naturaleza." },
-    cover: "", images: [], videos: [], links: []
+    id: "slo", cats: ["video"], year: "2023", title: "Slö",
+    role: { en: "Lead actor · Credits editor · Creative collaborator", es: "Protagonista · Edición de créditos · Colaboración creativa" }, tools: "Premiere",
+    desc: {
+      en: "A visual and sound journey that contrasts the grey monotony of everyday life with a vibrant dream world connected to nature. I played the lead role, edited the credits sequence and contributed ideas for the shots, music and overall concept.",
+      es: "Un viaje visual y sonoro que contrasta la monotonía gris de la vida cotidiana con un mundo onírico vibrante conectado con la naturaleza. Fui el protagonista, edité la secuencia de créditos y aporté ideas para las tomas, la música y el concepto general."
+    },
+    cover: "assets/img/slo-cover.jpg",
+    media: [ { yt: "BOcyJoKaJpY" }, "assets/img/slo-01.jpg" ],
+    images: [], videos: [], links: [],
+    note: { en: "Created and produced by Jorge Manuel Carriles, who also composed and performed all the music.", es: "Idea y producción de Jorge Manuel Carriles, quien también compuso e interpretó toda la música." }
   },
 
   // --- Diseño gráfico y marca ---
