@@ -37,7 +37,7 @@ const initials = (title) =>
 
 function cardHTML(p) {
   const media = p.cover
-    ? `<img src="${p.cover}" alt="${p.title}" loading="lazy">`
+    ? `<img src="${p.cover}" alt="${p.title}" loading="lazy" decoding="async" class="is-loading" onload="this.classList.remove('is-loading')">`
     : `<span class="card__placeholder">${initials(p.title)}</span>`;
   const tags = p.cats.map((c) => bi(CAT_NAMES[c])).join(" · ");
   return `
@@ -83,7 +83,7 @@ function openProject(id) {
       <iframe src="https://www.youtube-nocookie.com/embed/${v}" title="${p.title}" loading="lazy"
         allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
     </div>`;
-  const imgHTML = (src) => `<img src="${src}" alt="${p.title}" loading="lazy">`;
+  const imgHTML = (src) => `<img src="${src}" alt="${p.title}" loading="lazy" decoding="async" class="is-loading" onload="this.classList.remove('is-loading')">`;
   const sketchfabHTML = (uid) => `
     <div class="modal__video">
       <iframe src="https://sketchfab.com/models/${uid}/embed?ui_theme=dark" title="${p.title} 3D" loading="lazy"
