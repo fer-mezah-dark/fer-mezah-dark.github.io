@@ -312,9 +312,32 @@
   </footer>
 
   <!-- Animaciones (GSAP) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Contenido y proyectos: se cargan primero para que el sitio aparezca de inmediato -->
   <script src="js/projects.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- Animaciones (GSAP): si un servidor tarda o falla, se usa el otro, y nunca bloquean el sitio -->
+  <script>
+    (function () {
+      var CDNS = [
+        "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/",
+        "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/"
+      ];
+      function load(src, ok, fail) {
+        var s = document.createElement("script");
+        s.src = src; s.onload = ok; s.onerror = fail;
+        document.head.appendChild(s);
+      }
+      function tryCdn(i) {
+        if (i >= CDNS.length) return;
+        load(CDNS[i] + "gsap.min.js", function () {
+          load(CDNS[i] + "ScrollTrigger.min.js", function () {
+            if (window.startAnimations) window.startAnimations();
+          }, function () { tryCdn(i + 1); });
+        }, function () { tryCdn(i + 1); });
+      }
+      tryCdn(0);
+    })();
+  </script>
 </body>
 </html>
