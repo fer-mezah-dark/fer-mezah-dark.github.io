@@ -15,6 +15,9 @@
         lang = (navigator.language || 'en').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
       }
       document.documentElement.lang = lang;
+      // Oculta lo que se anima hasta que las animaciones estén listas (evita ver la página "de golpe" y luego animarse)
+      document.documentElement.classList.add('anim-pending');
+      setTimeout(function () { document.documentElement.classList.remove('anim-pending'); }, 4000); // respaldo si no cargan
     })();
   </script>
 
