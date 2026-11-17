@@ -315,5 +315,8 @@ window.startAnimations = function () {
       scrollTrigger: { trigger: el, start: "top 85%" }
     });
   });
+
+  // Ya con todo preparado, se muestra la página y empiezan las animaciones
+  document.documentElement.classList.remove("anim-pending");
 };
 startAnimations(); // por si GSAP ya estaba cargado
