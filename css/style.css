@@ -575,6 +575,15 @@ html[lang="es"] .lang-toggle [data-l="es"] { color: var(--gold); font-weight: 60
   .mock--desktop { width: 100%; }
   .mock--phone { flex-basis: auto; width: 220px; }
 }
+.modal__fig { margin: 0; }
+.modal__fig figcaption {          /* pie de foto */
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+}
+.modal__fig img { max-height: 85vh; width: auto; max-width: 100%; margin: 0 auto; }
 .modal__empty {
   aspect-ratio: 16 / 9;
   border: 1px dashed var(--line);
