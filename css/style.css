@@ -28,6 +28,13 @@ ul, ol { list-style: none; }
 html[lang="en"] body [lang="es"],
 html[lang="es"] body [lang="en"] { display: none !important; }
 
+/* ===== ANTES DE LAS ANIMACIONES: lo animado espera oculto ===== */
+.anim-pending .hero__logo,
+.anim-pending .hero__kicker,
+.anim-pending .hero__title,
+.anim-pending .hero__sub,
+.anim-pending .reveal { opacity: 0; }
+
 /* ===== NAVEGACIÓN ===== */
 .nav {
   position: fixed;
