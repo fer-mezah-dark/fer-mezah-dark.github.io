@@ -809,5 +809,16 @@ body.modal-open { overflow: hidden; }
   .grid--more .card__title { font-size: 0.9rem; }
   .grid--more .card__role { font-size: 0.6rem; letter-spacing: 0.08em; }
   .grid--more .card__tags { display: none; }
-  .modal { width: 100vw; max-width: 100vw; max-height: 100vh; height: 100vh; border: none; }
+  /* En celular la ventana ocupa exactamente la parte visible de la pantalla
+     (100dvh descuenta la barra del navegador; 100vh la incluía y por eso la X quedaba cortada) */
+  .modal {
+    position: fixed;
+    inset: 0;
+    margin: 0;
+    width: 100%; max-width: 100%;
+    height: 100vh; max-height: 100vh;
+    height: 100dvh; max-height: 100dvh;
+    border: none;
+  }
+  .modal__close { top: 0.75rem; margin: 0.75rem 0.75rem 0 0; }
 }
