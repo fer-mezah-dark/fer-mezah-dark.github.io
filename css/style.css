@@ -633,6 +633,26 @@ html[lang="es"] .lang-toggle [data-l="es"] { color: var(--gold); font-weight: 60
   text-align: center;
 }
 .modal__fig img { max-height: 85vh; width: auto; max-width: 100%; margin: 0 auto; }
+/* ===== CÍRCULO DE CARGA (solo mientras carga cada imagen o video) ===== */
+.loader-box { position: relative; }
+.loader-box.is-loading { min-height: 220px; background: var(--bg-soft); }
+.modal__grid .loader-box.is-loading { min-height: 0; aspect-ratio: 1 / 1; }
+.is-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 34px; height: 34px;
+  margin: -17px 0 0 -17px;
+  border-radius: 50%;
+  border: 2px solid rgba(212, 166, 74, 0.2);
+  border-top-color: var(--gold);
+  animation: spin 0.9s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+.modal__video iframe, .modal__short iframe, .loader-box img { position: relative; z-index: 1; }
+.modal__video iframe, .modal__short iframe { position: absolute; }
+@keyframes spin { to { transform: rotate(360deg); } }
 .modal__empty {
   aspect-ratio: 16 / 9;
   border: 1px dashed var(--line);
