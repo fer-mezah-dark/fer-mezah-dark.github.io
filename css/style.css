@@ -633,6 +633,13 @@ html[lang="es"] .lang-toggle [data-l="es"] { color: var(--gold); font-weight: 60
   text-align: center;
 }
 .modal__fig img { max-height: 85vh; width: auto; max-width: 100%; margin: 0 auto; }
+/* ===== ESCRITORIO: la X queda centrada en el margen entre las imágenes y la barra de desplazamiento ===== */
+@media (min-width: 641px) {
+  .modal { --gutter: 5rem; }
+  .modal__content { padding-left: var(--gutter); padding-right: var(--gutter); }
+  .modal__close { margin-right: calc((var(--gutter) - 44px) / 2); }
+}
+
 /* ===== CÍRCULO DE CARGA (solo mientras carga cada imagen o video) ===== */
 .loader-box { position: relative; }
 .loader-box.is-loading { min-height: 220px; background: var(--bg-soft); }
