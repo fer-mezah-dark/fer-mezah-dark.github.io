@@ -170,6 +170,24 @@ function openProject(id) {
     ${links}
     ${p.note ? `<p class="modal__note">${bi(p.note)}</p>` : ""}`;
 
+  // Círculo de carga: se muestra mientras cada imagen o video carga y se quita al terminar
+  // (así la animación no sigue corriendo de fondo)
+  modalContent.querySelectorAll(".modal__media img:not(.mock img), .modal__video iframe, .modal__short iframe").forEach((el) => {
+    const box = el.tagName === "IFRAME" ? el.parentElement : el;
+    if (el.tagName === "IMG" && el.complete && el.naturalWidth) return;  // ya estaba en caché
+    let holder = box;
+    if (el.tagName === "IMG") {
+      holder = document.createElement("div");
+      holder.className = "loader-box";
+      el.replaceWith(holder);
+      holder.appendChild(el);
+    }
+    holder.classList.add("is-loading");
+    const done = () => holder.classList.remove("is-loading");
+    el.addEventListener("load", done, { once: true });
+    el.addEventListener("error", done, { once: true });
+  });
+
   modal.showModal();
   modal.scrollTop = 0;
   document.body.classList.add("modal-open");
